@@ -9,7 +9,7 @@
     background:#000;
     color:#eee;
     position:relative;
-    height:100vh;
+    /* height:100vh; */
 }
 #header{
     width:200px;
@@ -62,4 +62,89 @@
     display:block;
     padding:10px 0;
     border-radius: 6px;
+}
+
+#main{
+    margin-left:200px;
+    padding:100px 80px;
+    position:relative;
+}
+.siteDetail{
+    width:900px;
+    position:relative;
+    top:0;
+    left:0;
+}
+.siteDetail h2{
+    width:50%;
+    font-size:30px;
+}
+.siteDetail h4{
+    width:50%;
+    padding:20px 0;
+    line-height:30px;
+}
+.siteDetail img{
+    position:absolute;
+    top:0;  right:0;
+    width:400px;
+}
+
+.siteUse{
+    width:900px;
+    position:relative;
+    top:0; left:0;
+}
+.button{
+    margin:100px 0;
+    padding-left:50px;
+}
+.freeSign, .devTool{
+    display:inline-block;
+    cursor: pointer;
+    font-size:20px;
+    padding:10px 20px;
+}
+.freeSign{
+    background:#47C83E;
+    border-radius: 5px;
+}
+.freeSign:hover{
+    background:#31882a;
+}
+.devTool{
+    margin-left:20px;
+    background:#4c6fb7;
+    border-radius: 5px;
+}
+
+.card{
+    padding:50px;
+    width:900px;
+}
+.build, .learn{
+    display:inline-block;
+    width:350px;
+    background:#272731;
+    padding:20px;
+    border-radius: 10px;
+}
+
+.learn{
+    margin-left:50px;
+}
+.build img, .learn img{
+    width:100%;
+    border-radius: 10px;
+}
+.build h3, .learn h3{
+    font-size:25px;
+    padding-bottom:15px;
+}
+
+#footer{
+    margin-left:200px;
+    background:#262627;
+    padding:50px 100px;
+    line-height: 35px;
 }
