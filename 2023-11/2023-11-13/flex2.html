@@ -1,0 +1,63 @@
+<!-- flex2.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin:0; padding:0; box-sizing: border-box;
+        }
+        #wrap{
+            width:1000px;
+            margin:0 auto;
+            position:relative;
+        }
+        #header{
+            width:100%;
+            padding:15px 0;
+        }
+        .nav{
+            width:100%;
+            font-size:25px;
+            font-weight:800;
+        }
+        .menuList{
+            width:100%;
+            list-style:none;
+            display:flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="wrap">
+        <header id="header">
+            <nav class="nav">
+                <ul class="menuList">
+                    <li class="menu">쇼핑</li>
+                    <li class="menu">뉴스</li>
+                    <li class="menu">증권</li>
+                    <li class="menu">부동산</li>
+                    <li class="menu">스포츠</li>
+                </ul>
+            </nav>
+        </header>
+        <main id="main">
+            <div class="picBox">
+                <div class="pic"><img src="https://loremflickr.com/500/500?random=1" alt="이미지"></div>
+                <div class="pic"><img src="https://loremflickr.com/500/500?random=2" alt="이미지"></div>
+                <div class="pic"><img src="https://loremflickr.com/500/500?random=3" alt="이미지"></div>
+                <div class="pic"><img src="https://loremflickr.com/500/500?random=4" alt="이미지"></div>
+                <div class="pic"><img src="https://loremflickr.com/500/500?random=5" alt="이미지"></div>
+                <div class="pic"><img src="https://loremflickr.com/500/500?random=6" alt="이미지"></div>
+                <div class="pic"><img src="https://loremflickr.com/500/500?random=7" alt="이미지"></div>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
