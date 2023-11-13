@@ -42,6 +42,29 @@
             justify-content: space-between;
             /* align-items: center; */
         }
+
+        #main{
+            width:100%;
+            display:flex;
+            flex-direction: column;
+        }
+        .picBox{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content: space-between;
+            row-gap:10px;
+            order:2;  
+            /*  order의 값이 작을수록 위에 배치 ,  order값이 없는
+                       flexItem이  위에 배치된다. */
+        }
+        .notice{
+            order:1;
+        }
+        .pic{
+            width: calc( 100% / 3 - 10px);
+            /* padding:10px; */
+        }
+        
     </style>
 </head>
 <body>
@@ -70,6 +93,12 @@
                 <div class="pic"><img src="https://loremflickr.com/500/500?random=5" alt="이미지"></div>
                 <div class="pic"><img src="https://loremflickr.com/500/500?random=6" alt="이미지"></div>
                 <div class="pic"><img src="https://loremflickr.com/500/500?random=7" alt="이미지"></div>
+            </div>
+            <div class="notice">
+                현재 집에서 기르고 있는 모든 애완용 고양이는 아프리카 남유럽 인도에
+                걸쳐 분포하는 리비아 고양이를 사육 순화 시킨것
+                약 5000년전 리비아산 야생고양이를 고대 이집트인들이 길들인것
+
             </div>
         </main>
     </div>
