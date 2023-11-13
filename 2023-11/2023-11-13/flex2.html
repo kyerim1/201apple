@@ -10,6 +10,7 @@
         *{
             margin:0; padding:0; box-sizing: border-box;
         }
+        img{ width:100%;}
         #wrap{
             width:1000px;
             margin:0 auto;
@@ -23,12 +24,23 @@
             width:100%;
             font-size:25px;
             font-weight:800;
+            display:flex;
+            align-items: center;
+            justify-content: space-between;
         }
+        .logo{
+            width:80px;
+            /* display:flex;
+            align-items: center; */
+        }
+        .logo img{ vertical-align: middle;}
+        
         .menuList{
-            width:100%;
+            width: calc( 100% - 80px - 30px );/* nav전체너비 - 로고너비 - 로고와메뉴간격 */
             list-style:none;
             display:flex;
             justify-content: space-between;
+            /* align-items: center; */
         }
     </style>
 </head>
@@ -37,6 +49,9 @@
     <div id="wrap">
         <header id="header">
             <nav class="nav">
+                <div class="logo">
+                    <img src="https://loremflickr.com/500/500?random=1" alt="logo">
+                </div>
                 <ul class="menuList">
                     <li class="menu">쇼핑</li>
                     <li class="menu">뉴스</li>
