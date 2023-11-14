@@ -40,13 +40,90 @@
     // 국어, 수학 ,역사  3과목의 점수를 각각 입력 받기
     // 총점과 평균을 출력 하기,  평균 은 정수만 출력
 
-    var kor = parseInt( prompt("국어점수 ") );
-    var mat = parseInt( prompt("수학점수") );
-    var his = parseInt( prompt("역사점수") );
+    // var kor = parseInt( prompt("국어점수 ") );
+    // var mat = parseInt( prompt("수학점수") );
+    // var his = parseInt( prompt("역사점수") );
 
-    var total = kor + mat + his; // 총점 계산하기
-    var avg = parseInt( total/3 ); // 총 과목이 3과목이니까 나누기 3;
-    document.write("총점 : " + total +"점 , 평균 : "+avg+"점<br>");
+    // var total = kor + mat + his; // 총점 계산하기
+    // var avg = parseInt( total/3 ); // 총 과목이 3과목이니까 나누기 3;
+    // document.write("총점 : " + total +"점 , 평균 : "+avg+"점<br>");
+
+    // 연산자  
+    // 대입연산자 :  = , 오른쪽에 데이터를 왼쪽에 저장
+    // 사칙연산자 : +, - , * , / , % , **
+    // var num1= 24;
+    // var num2 = 7;
+    // document.write( "+연산자 : " + (num1+num2) );
+    // document.write("<br>  -연산자 : " + (num1-num2) );
+    // document.write("<br>  *연산자 : " +(num1*num2) );
+    // document.write("<br>  /연산자 : "+ (num1/num2) );
+    // document.write("<br> %연산자 : " + (num1%num2) );
+    // document.write("<br>  **연산자 : "+ (2**4) );
+
+    // // 복합대입연산자 : +=,  -=, *=, /=, %=
+    // var a =10;
+    // a+=5;    //a = a + 5; 
+    // // 증감연산자 :  ++ ,  --
+
+    // var num1 = 20;
+    // //num1++;
+    // console.log(++num1);
+    // num1--;
+    // console.log(num1);
+
+    // //비교연산자 :  > , < , >=  ,<=  , == , === , !=
+    // // 비교를 하기위한 연산자  ,  비교연산자 의 결과 값은 참또는 거짓
+    // console.log(" >  :" + (10>5) );
+    // console.log(" <  : "+ ( 11<7 ) );
+    // console.log(" >=  : " +(  20 >=20 ) );
+    // console.log(" <=  : " + ( 24 <= 30 ) );
+    // console.log(" ==  :" + ( 45 == 3)  );
+    // console.log(" 2. ==  : " + ( 45 == "45" ) );
+    // console.log(" 3. ===  : " + ( 45 === "45" )  );
+    // console.log("같지않다  !=  " +( 30 != 20 ));
+
+    // 조건연산자 (삼항연산자)
+    // (조건식) ? 조건식이 참일경우 내용  :  조건식이 거짓일경우 내용 ;
+
+    // (10 > 5) ? console.log("10이5보다 크다") : console.log("10이 5 보다 작다");
+    
+    // // T 익스프레스 탑승 가능 키가 130 이상 이다.
+    // var tall= parseInt( prompt("당신의 키는"));
+    // //( tall >= 130 ) ? console.log("탑승가능") : console.log("탑승 불가");
+    
+    // var result = (tall>=130) ? "탑승가능" : "탑승불가";
+    // console.log(result);
+
+    // // 10과 8을 비교하여 두 수 중에서 큰수를 출력하시오
+    // var result = ( 10 > 8 ) ? 10 : 8;
+    // console.log("두수중 큰수는 : "+result);
+
+    // var num1= parseInt(prompt("첫번째 정수 입력"));
+    // var num2 = parseInt(prompt("두번째 정수 입력"));
+    // var big = ( num1 > num2 ) ? num1 : num2;
+    // console.log( "두수중 큰수 : "+big);
+
+    //  두 개의 정수를 입력받고, 두수 중에서 가장 작은수를 출력하시오
+    // var num1 = parseInt(prompt("첫번째 정수"));
+    // var num2 = parseInt( prompt("두번째 정수 ") );
+    // var result = ( num1 < num2 ) ? num1 : num2;
+    // console.log("두수중 작은수 : " + result);
+
+    // // 생년월일을 입력하여  성인 인지 아닌지 판별하기
+    // var birth = parseInt( prompt("생년월일 8자 입력"));
+    // // 19991212 ->  19991212/10000  ->  1999.1212
+    // //  3 ,4 ,6,7  ->3*1000 + 4*100 + 6*10 + 7  3467
+    // var age = 2023 - parseInt(birth/10000);
+    // var result = ( age >= 19) ? "성인입니다" : "성인이 아닙니다.";
+    // console.log(result);
+
+    var num1 = parseInt( prompt("10, 100, 50 중에 하나만 입력 "));
+
+    var result = ( num1 == 10 ) ? 10 : "아무것도";
+    result = (num1 == 100 ) ? 100 : result ;
+    result = (num1 == 50) ? 50 : result;
+    console.log("당신은 " + result +" 입력했습니다.");
+
 
 </script>
 
