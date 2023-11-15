@@ -166,11 +166,11 @@
     // var result = (same==1) ? "모두같다" : "가장큰수 : "+big;
     // console.log(result);
 
-    var coin = parseInt( Math.random()*2 );
-//0. 앞면   1. 뒷면
-    var user = parseInt( prompt("0-앞면, 1-뒷면"));
-    var result = ( coin == user ) ? "정답" : "틀림";
-    console.log(result);
+//     var coin = parseInt( Math.random()*2 );
+// //0. 앞면   1. 뒷면
+//     var user = parseInt( prompt("0-앞면, 1-뒷면"));
+//     var result = ( coin == user ) ? "정답" : "틀림";
+//     console.log(result);
 
 
     // 과제
@@ -180,8 +180,45 @@
     //  내가 승리 했는가 패배 했는가 출력하세요.
     //  단,  같은 숫자라면 비김!!
 
-    
+    // var com = parseInt(Math.random()*6)+1;
+    // var user = parseInt(Math.random()*6)+1;
 
+    // var result = (user > com) ? "승리" : (user==com)? "비김":"패배";
+    // console.log("나 : " +user+"  컴 : " + com + "   결과 : " + result);
+
+
+    //1. 소주 한잔을 마시면 수명이 2분 단축된다.
+    //   어떤 사람이  소주를 매일 같은 양으로 20년을 마셨다.
+    //   이사람이  하루에 몇잔의 소주를 마시는지 입력 받기
+    //   총 단축된 수명이 몇분인가?
+    //   총 단축된 수명이 몇시간인가? (정수만출력)
+    //   총 단축된 수명이 몇일인가?  (정수만출력)
+    
+    // var soju = parseInt( prompt("하루에 소주 몇잔 "));
+    // var life = soju*2*365*20; 
+    // console.log("총 단축된 수명 : " + life +"(분)");
+    // console.log("총 단축된 수명 : " +( parseInt(life/60) )+ "(시간)");
+    // console.log("총 단축된 수명 : "+ ( parseInt(life/60/24) ) +"(일)");
+
+    // 2.  주사위게임
+    //  컴퓨터와 나는 각자  주사위를 두개씩 던진다.
+    //  주사위의 합이 큰쪽이 이긴다.
+    //  내가 이겼는지 졌는지 비겼는지  출력하기
+    //  단, 두개의 주사위 값이 1이 나오면 무조건 이긴다.
+
+    var com1 = parseInt( Math.random()*6)+1;
+    var com2 = parseInt( Math.random()*6)+1;
+    
+    var user1 = parseInt( Math.random()*6)+1;
+    var user2 = parseInt( Math.random()*6)+1;
+
+    var com = com1 + com2;
+    var user = user1 + user2;
+
+    var result = (user > com ) ? (com != 2)? "승리 " : "패배" : 
+                     (user == com) ? "비김" : (user == 2)?"승리": "패배" ;
+    
+    console.log(`컴퓨터 : (${com1},${com2})  , 나 : (${user1}, ${user2}) , 결과 : ${result}`);
 
 
 </script>
