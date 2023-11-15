@@ -206,19 +206,40 @@
     //  내가 이겼는지 졌는지 비겼는지  출력하기
     //  단, 두개의 주사위 값이 1이 나오면 무조건 이긴다.
 
-    var com1 = parseInt( Math.random()*6)+1;
-    var com2 = parseInt( Math.random()*6)+1;
+    // var com1 = parseInt( Math.random()*6)+1;
+    // var com2 = parseInt( Math.random()*6)+1;
     
-    var user1 = parseInt( Math.random()*6)+1;
-    var user2 = parseInt( Math.random()*6)+1;
+    // var user1 = parseInt( Math.random()*6)+1;
+    // var user2 = parseInt( Math.random()*6)+1;
 
-    var com = com1 + com2;
-    var user = user1 + user2;
+    // var com = com1 + com2;
+    // var user = user1 + user2;
 
-    var result = (user > com ) ? (com != 2)? "승리 " : "패배" : 
-                     (user == com) ? "비김" : (user == 2)?"승리": "패배" ;
+    // var result = (user > com ) ? (com != 2)? "승리 " : "패배" : 
+    //                  (user == com) ? "비김" : (user == 2)?"승리": "패배" ;
     
-    console.log(`컴퓨터 : (${com1},${com2})  , 나 : (${user1}, ${user2}) , 결과 : ${result}`);
+    // console.log(`컴퓨터 : (${com1},${com2})  , 나 : (${user1}, ${user2}) , 결과 : ${result}`);
+
+    // 3. 주차비 정산
+    //  apple주차장의 주차요금 표
+    //   기본 주차비 - 1000원,  기본 시간- 30분
+    //   ( 30분 이내 주차시 1000원 ,  5분 주차해도 1000원, 39분까지 1000원)
+    //   10분당 100원씩 추가  ( 40분 주차시 1100원, 54분 주차시 1200원 )
+    //   2시간 이상 주차시 기본요금 변경 
+    //             기본요금 - 1500원 
+    //             (2시간 1분주차시 - 1500원, 2시간 34분주차시 - 1800원)
+    //  주차시간을 분단위로 입력하여  주차요금이 얼마인지 출력하시오
+
+    var time = parseInt(prompt("주차시간"));
+    var cost =1000;
+    //  15 -30 ->  -15/10  -> -1.5 ->  -1
+
+    cost = (time >= 120)? 1500 : cost; 
+
+    time = (time>=120)? time-120 : (time>=30) ? time-30: 0;
+
+    var price = parseInt(time/10) * 100 + cost;
+    console.log(`주차요금 : ${price}원`);
 
 
 </script>
