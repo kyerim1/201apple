@@ -8,10 +8,30 @@
 
     <script src="./static/javascript/if.js"></script>
 
+    <style>
+        #game{
+            display:flex;
+            column-gap: 50px;
+        }
+        #game div{width:600px;}
+        #game div img{width:100%;}
+        #game div:hover{ background:yellow; cursor: pointer;}
+    </style>
 </head>
 <body>
 
-    <
+    <h1>가위바위보를 이겨라!!</h1>
+    <div id="game">
+        <div id="scissors">
+            <img src="./static/images/scissors.png" alt="가위">
+        </div>
+        <div id="rock">
+            <img src="./static/images/rock.png" alt="바위">
+        </div>
+        <div id="paper">
+            <img src="./static/images/paper.png" alt="보">
+        </div>
+    </div>
 
 
     <!-- <h2> 동전 앞면 뒷면을 맞추세요!!</h2>

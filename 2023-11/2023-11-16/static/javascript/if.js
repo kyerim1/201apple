@@ -79,14 +79,42 @@ if( 조건식 ){
 //  css 선택자  id- #,  class - .
 
 // 브라우저에 html태그가 모두 로딩(화면표시)되면 자바스크립트 코드를 실행시키는방법
+var com = Math.floor(Math.random()*3)+1;
 
 window.onload=function(){
 
     // 가위 바위 보 게임 만들기 
     // 1.가위  2.바위  3.보
 
-    var com = parseInt(Math.random()*3)+1;
-    var user = parseInt(prompt("1.가위  2.바위  3.보"));
+   
+    // var user = parseInt(prompt("1.가위  2.바위  3.보"));
+
+    var scis = document.getElementById("scissors");
+    var rock = document.getElementById("rock");
+    var paper = document.getElementById("paper");
+
+    scis.addEventListener("click",function(){  // 가위클릭
+        if( com == 1 ){
+            alert("비김");
+        }else if( com==3 ){   alert("승");  }
+        else{  alert("패");   }
+        com = Math.floor(Math.random()*3)+1;
+        scis.style.background="black";
+        rock.style.background="white";
+        paper.style.background="white";
+    });
+    rock.addEventListener("click",function(){ // 바위 클릭
+        if( com == 2 ){ alert("비김");  }
+        else if( com == 1 ) { alert("승"); }
+        else{ alert("패"); }
+        com = Math.floor(Math.random()*3)+1;
+    }); 
+    paper.addEventListener("click",function(){  //보 클릭
+        if( com == 3 ){ alert("비김");  }
+        else if( com == 2 ) { alert("승"); }
+        else{ alert("패"); }
+        com = Math.floor(Math.random()*3)+1;
+    });
 
     if( com == user){
         alert("비김");
