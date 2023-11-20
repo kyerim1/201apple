@@ -1,0 +1,177 @@
+<!--  script_for.html  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // 반복문 -  특정 코드들을  주어진 조건 동안 반복적으로 실행 시킨다.
+        //   반복문에도 조건식을 작성한다.
+        //   조건식이 참일경우에는 반복 실행할 코드들이 동작하고
+        //   조건식이 거짓이되는 순간 즉시 반복문은 종료 된다.
+        //   반복문을 작성할때  몇번을 반복해야 하는지 잘 생각 하고 조건을 완성해야한다.
+        //  5번 반복 -   시작 ~ 끝  , 1부터 5까지  , a=1; a<=5;  a++
+
+        // for( 초기값; 조건식;  증감식 )
+        // for(var i=1;  i<=17; i++ ){   //   ; 두개는 반드시 작성해야한다.
+        //     document.write( i + " <br>");
+        // }
+
+        // for(var i=1; i<=9; i++){
+        //     document.write(`2 * ${i} = ${2*i}<br>`); //백틱  "2*3"
+        // }
+
+        // var num = parseInt(prompt("구구단 단수 입력"));
+        // for(var i=1; i<=9; i++){
+        //     document.write(`${num} * ${i} = ${num*i} <br>`);
+        // }
+
+        // // 정수 하나를 입력 받아서  ,  입력한 정수 만큼 반복 되는 반복문 만들기
+        // //  내용은 반복문에 사용된 변수의 값 출력
+
+        // var num = parseInt(prompt("정수 입력 "));
+        // for( var i=1; i<=num; i++){
+        //     document.write(i+" ");
+        // }
+
+        // for( var i=10; i>1; i--)
+        //     document.write(" 1씩 감소    ");
+        
+
+        // for( var i=1; i<=10; i= i+2){
+
+        // }
+        // for( var i=1; i<=10; i++){
+        //     if(i%2==0)  // 중괄호 생략은 실행되는 코드가 한줄일경우
+        //         document.write( i+"  ");
+        // }
+
+        // 문제 .    1부터 100까지 중에서 5의 배수만 출력 하시오.
+
+        // for( var i =1; i<=100; i++){
+        //     if( i%5 == 0 )
+        //         document.write("5의배수 : " + i+",  ");
+        // }
+        // for( var i=5; i<=100; i=i+5){
+        //     document.write(i+" ");
+        // }
+        // // 1부터 100까지 숫자중에서  4의 배수이며 6의배수인 4,6공배수 출력
+        // for(var i=1; i<=100; i++){
+        //     if( i%4==0  &&  i%6==0 )
+        //         document.write("공배수 : " +i+"<br>");
+        // }
+
+        // var sum=0; 
+        // for( var i=1; i<=10; i++){
+        //     sum = sum + i;
+        // }
+        // document.write("1부터10까지 총합 : " + sum+"<br>");
+
+
+        // 동전 앞면 뒷면
+
+        // var ok=0;
+        // for( var i=1; i<=10; i++){
+
+        //     var coin = Math.floor(Math.random()*2)+1;  
+        //     var user = prompt("동전 앞, 뒤 면 입력(앞,뒤)");
+        //     if( (coin==1 && user==="앞" )|| (coin==2 && user==="뒤") ){
+        //         document.write(`정답!!   동전 : ${coin} , 나 : ${user}<br>`);
+        //         ok++;
+        //     }else{
+        //         document.write(`땡!!!   동전 : ${coin} , 나 : ${user}<br>`);
+        //     }
+        // }
+        // document.write("정답횟수 : "+ok+"번 <br>");
+
+        // 가위바위보 게임 10판 진행,  
+        // 게임이 끝나면  몇승, 몇패, 몇무  출력
+
+        // var win=0, lose=0, draw=0;
+
+        // for( var i=1; i<=10; i++){
+        //     var com = Math.floor(Math.random()*3)+1;
+        //     var user = parseInt(prompt("1.가위 2.바위 3.보"));
+        //     if(com==user){
+        //         document.write("무 <br>");  
+        //         draw++;
+        //     }else if( (com==1&&user==2) || (com==2&&user==3) || (com==3&&user==1)){
+        //         document.write("승 <br>");
+        //         win++;
+        //     }else{
+        //         document.write("패 <br>");
+        //         lose++;
+        //     }
+        // }
+        // document.write(`${win}승 , ${lose}패, ${draw}무`);
+
+        // var num= parseInt(prompt("몇개"));
+
+        // for(var i=1; i<=num; i++){
+        //     var img = `<div><img src="https://loremflickr.com/200/200?random=${i}" alt="이미지"></div>`;
+        //     document.write( img );
+        // }
+
+        // for( var i=1; i<=4; i++){
+        //     for( var k=1; k<=3; k++){
+        //         document.write( k+"중첩 ");
+        //     }
+        //     document.write("<br>");
+        // }
+
+        // // 구구단 전체 출력
+        // for( var i=2; i<=9; i++){
+        //     for( var k=1; k<=9; k++)
+        //         document.write(`${i} * ${k} = ${i*k} <br>`);
+        // }
+        
+
+        // 반복문이 필요한 상황에서  한번만 실행되는 코드를 반복문 없이 작성한다.
+        // 작성된코드에  반복문을 감싸준다.
+        // 반복적으로 실행될코드는 그대로두고  반복적으로 실행되면 안되는 코드들을선별하여
+        //  반복문 밖으로 이동시킨다.
+        // 
+        
+
+        // 숫자상관없이   홀수 칸만 빨간색 배경으로 표시
+        var row = parseInt(prompt("테이블 몇줄"));
+        var col = parseInt(prompt("테이블 몇칸"));
+
+        var table="<table>";
+
+        for(var i=1; i<=row; i++){
+            table += "<tr>"; 
+            for(var k=1; k<=col; k++){
+                var num = (i-1)*col+k;
+                if(num%2 == 0)
+                    table += "<td style='background:yellow;'>"+( num )+"</td>";
+                else
+                    table += "<td>"+( num )+"</td>";
+            }
+            table += "</tr>";
+        }
+        table += "</table>"; //  table = table+"</table>"
+        document.write( table );
+
+
+
+    </script>
+
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        table tr td{
+            border:1px solid black;
+            width:100px;
+            height:50px;
+        }
+    </style>
+
+</head>
+<body>
+    
+</body>
+</html>
