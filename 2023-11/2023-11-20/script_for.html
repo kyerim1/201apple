@@ -136,25 +136,113 @@
         
 
         // 숫자상관없이   홀수 칸만 빨간색 배경으로 표시
-        var row = parseInt(prompt("테이블 몇줄"));
-        var col = parseInt(prompt("테이블 몇칸"));
+        // var row = parseInt(prompt("테이블 몇줄"));
+        // var col = parseInt(prompt("테이블 몇칸"));
 
-        var table="<table>";
+        // var table="<table>";
 
-        for(var i=1; i<=row; i++){
-            table += "<tr>"; 
-            for(var k=1; k<=col; k++){
-                var num = (i-1)*col+k;
-                if(num%2 == 0)
-                    table += "<td style='background:yellow;'>"+( num )+"</td>";
-                else
-                    table += "<td>"+( num )+"</td>";
-            }
-            table += "</tr>";
+        // for(var i=1; i<=row; i++){
+        //     table += "<tr>"; 
+        //     for(var k=1; k<=col; k++){
+        //         var num = (i-1)*col+k;
+        //         if(k%2 == 1)
+        //             table += "<td style='background:red;'>"+( num )+"</td>";
+        //         else
+        //             table += "<td>"+( num )+"</td>";
+        //     }
+        //     table += "</tr>";
+        // }
+        // table += "</table>"; //  table = table+"</table>"
+        // document.write( table );
+
+
+        // 반복문의 무한 반복 - 몇번 반복해야 하는지 정해지지않은경우
+        //  정수를 입력하기 -> 그만 입력하기 위해 0을 입력한다.
+        // 동전 앞면 뒷면 맞추기 게임을 하는데  정답 맞출때까지 게임을 계속하도록 한다면
+        //  언제 정답을 맞추게 될지 알수 없기때문에 무한 반복이 필요하다.
+
+        // for( ; true; ){
+        //     var coin= Math.floor(Math.random()*2)+1;
+        //     var user = parseInt(prompt("1.앞 2.뒤 "));
+        //     if(coin == user){
+        //         document.write("정답");
+        //         break;
+        //     }
+        //     else{
+        //         document.write("오답");
+        //     }
+        // }
+
+        //  무한루프 안에서  랜덤값 구하기( 랜덤 범위: 1~100)
+        //랜덤값이 7의 배수일 경우에  반복문을 중단하기
+        //  반복문이 끝날때까지 나온 랜덤값은 출력하기                                     
+
+        // for(;true;){
+        //     var num = Math.floor(Math.random()* 100 ) +1 ;
+        //     document.write( num+"<br>");
+        //     if( num%7==0 ) break;
+        // }
+
+        // 무한루프 ,  나이 입력 
+        // 내가 입력한 나이를 토대로  출생년도를 구하고
+        // 랜덤범위(1950 ~ 2003), 랜덤값중에서 내 출생년도가 나오기 까지 몇번의
+        // 반복문이 동작 했는지  출력하시오.
+
+        // var age = 0;
+        // for(; !(20<=age && age<=73) ;){   // age<20 || age>73 20미만, 또는  73 초과 일시 재입력
+        //     age = parseInt(prompt("나이 입력"));
+        // }
+        // var birth_year = 2023-age;
+        // var count=0;
+        // for(;true;){
+        //     var year = Math.floor(Math.random()* 54 ) + 1950 ;
+        //     count++;
+        //     if( year == birth_year) break;
+        // }
+
+        // document.write(count+"번 만에 나왔다.");
+
+        // var com = Math.floor(Math.random()*50 )+1 ;
+        
+        // for(;true;){
+        //     var user = parseInt(prompt("업다운 게임 "));
+        //     if( user > com){
+        //         alert("다운");
+        //     }
+        //     if(user < com){
+        //         alert("업");
+        //     }
+        //     if(user == com){
+        //         alert("정답");
+        //         break;
+        //     }
+        // }
+
+// for( var i=1; i<9; i++)   for( var i=1; i<=9-1; i++)
+//문자열의 알파벳 위치 번호->  위치번호를 프로그래밍에서는 인덱스라고 한다.
+
+        var word="international prototype";
+        // 지정한 알파벳의 갯수가 몇개인지 구하기
+        var alp="o";
+        var count=0;
+
+        for( var i=0; i< word.length;  i++){
+            if(word.charAt(i) === alp )
+                count++;
         }
-        table += "</table>"; //  table = table+"</table>"
-        document.write( table );
+        document.write(`${alp}알파벳은  총 ${count}개있다.`);
 
+        for( var i=1; i<=100; i++){
+             if( i%3==0 && i%10==0){
+                document.write("<div> pizzle buzzle</div>");
+            }
+            else if( i%3 == 0 ){
+                document.write("<div> pizzle</div>");
+            }else if(i%10==0){
+                document.write("<div>buzzle</div>");
+            }else
+                document.write(i+"  ");
+        }
 
 
     </script>
