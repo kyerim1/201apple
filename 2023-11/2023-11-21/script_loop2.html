@@ -109,6 +109,35 @@
         if(flag) break;
     }
 
+    //  do~while ;
+    // for, while 기본 동작순서
+    //    초기값 -> 조건식비교 ->참이라면 -> { 내용 } -> 증감식 
+    //        -> 조건식비교 -> 참 -> {내용} -> 증감식 -> 조건식비교-> 참-> ....
+    //        -> 조건식 비교 -> 거짓이라면-> 반복문 종료
+    //  do~while    초기값 - > { 내용 } -> 증감식 -> 조건식 비교
+
+    for(var i=10; i<=5; i++){
+        document.write(i+" for문 ");
+    }
+
+    var i=10;
+    do{
+        document.write(i+" do~while  ");
+    }while( i<=5 );
+
+
+    var user=0;
+    do{
+        user = parseInt(prompt("1~50입력"));
+    }while(!(user>=1 && user<=50));
+
+
+    for(; !(user>=1 && user<=50); ){
+        user = parseInt(prompt("1~50입력"));
+    }
+
+
+
 
     </script>
 

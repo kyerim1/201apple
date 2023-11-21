@@ -1,0 +1,49 @@
+<!--  script_io.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    
+    
+    <script>
+
+        window.onload=function(){ // $(function(){           })
+            // var nameTag = document.getElementById("name");
+            // alert(nameTag.value);
+        }
+
+        function enroll(){
+            // var nameTag = document.getElementById("name");  // $("#name")
+            // var res = document.getElementById("result");
+            // //res.innerHTML =  nameTag.value;
+            // res.innerText = "<h1>"+nameTag.value+"</h1>";
+
+            // jquery 태그 선택방법  -  $("#아이디"),  $(".클래스")
+
+            // document.getElementById("name").value  를
+            // jquery로 변경하면  $("#name").val()
+
+           // $("#result").text( $("#name").val() );
+
+           var birth = $("#name").val(); // id가 name인 input태그의 입력값
+           var age =  2023 - Number(birth.substring(0,4));
+           $("#result").text(age+"살");
+        }
+    </script>
+  
+</head>
+<body>
+
+    <input type="text" id="name" value="김유신"><br>
+    <button onclick="enroll()">입력</button>
+<!--  버튼 태그에 onclick 을 작성해야  클릭시 동작을 만들수 있다. 
+     onclick 뒤에 작성하는 내용은 자바스크립트에서 실행할 함수라는 이름을 넣어줘야한다.
+-->
+    <div id="result"></div>
+
+</body>
+</html>
+
