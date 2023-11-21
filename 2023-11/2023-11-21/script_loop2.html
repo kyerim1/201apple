@@ -195,30 +195,56 @@
 
 //1. 각 숫자는 1~9사이의 값이다.
         
-        for(var a=1; a<=9; a++){
-            for(var b=1; b<=9; b++){
-                for(var c=1; c<=9; c++){
-                    for( var d=1; d<=9; d++){
-                      //  2. 4개 숫자는 중복이 없다.   
-if( a!=b && a!=c && a!=d && b!=c && b!=d && c!=d){
-    //3. 1번째 숫자는 4번째 숫자보다 2만큼 크다.
-    if( a == d+2){
-        //4. 2번째 숫자는 3번째 숫자보다 작다.
-        if( b < c){
-  //  5. 비밀번호숫자 + 비밀번호역순 숫자의 합은 16896이다.
-            var num = a*1000+b*100+c*10+d;
-            var temp = d*1000+c*100+b*10+a;
-            if( num +temp == 16896){
-                alert(num);
-            }          
-        }
-    }
-}                   
-                    }
-                }
-            }
-        }
+//         for(var a=1; a<=9; a++){
+//             for(var b=1; b<=9; b++){
+//                 for(var c=1; c<=9; c++){
+//                     for( var d=1; d<=9; d++){
+//                       //  2. 4개 숫자는 중복이 없다.   
+// if( a!=b && a!=c && a!=d && b!=c && b!=d && c!=d){
+//     //3. 1번째 숫자는 4번째 숫자보다 2만큼 크다.
+//     if( a == d+2){
+//         //4. 2번째 숫자는 3번째 숫자보다 작다.
+//         if( b < c){
+//   //  5. 비밀번호숫자 + 비밀번호역순 숫자의 합은 16896이다.
+//             var num = a*1000+b*100+c*10+d;
+//             var temp = d*1000+c*100+b*10+a;
+//             if( num +temp == 16896){
+//                 alert(num);
+//             }          
+//         }
+//     }
+// }                   
+//                     }
+//                 }
+//             }
+//         }
 
+    var b1 = Math.floor(Math.random()*9)+1;
+    var b2=0, b3=0;
+    
+    while( (b1==b2 || b1==b3 || b2==b3) ){
+        b2=Math.floor(Math.random()*9)+1;
+        b3=Math.floor(Math.random()*9)+1;
+    }
+
+    var show="";
+
+    function find(){
+        var n1 = Number($("#num1").val());
+        var n2 = Number($("#num2").val());
+        var n3 = Number($("#num3").val());
+        var str=0, ball=0;
+        if(n1 == b1) str++;
+        if(n2 == b2) str++;
+        if(n3 == b3) str++;
+        if(n1 == b2 || n1 == b3) ball++;
+        if(n2 == b1 || n2 == b3) ball++;
+        if(n3 == b1 || n3 == b2) ball++;
+        show += `${n1} ${n2} ${n3}  결과 : ${str}스트라이크 ${ball}볼 ${3-str-ball}아웃 <br>`;
+        if( str==3) show+="정답!!!";
+        $("#result").html(show);
+
+    }
 
 
     </script>
