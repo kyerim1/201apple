@@ -153,3 +153,37 @@
 // 우리들의  평균 키는 얼마일까??
 // 이 사람들의 궁금증을 해결 해주세요!!!~~~
 // member = ["김유신","김민숙","송재열","남기정","서종순"]
+
+const member = ["김유신","김민숙","송재열","남기정","서종순"];
+let idx=0;//member배열의 인덱스
+let total=0;//전체 키의 합
+let tall=new Array();// 키 저장 배열
+let avg_below = new Array();// 평균키보다 작은 사람들이 누구냐
+
+
+$(function(){
+    $("#name").text( member[idx] );
+});
+
+function enroll(){
+    tall.push( Number( $("#tall").val() ) );
+    total += tall[idx];
+    if(idx == member.length-1){
+        var avg = total/member.length;
+
+        var out = "<ul>";
+        for( var i=0; i<tall.length; i++){
+            out += "<li>"+member[i] + " "+tall[i]+"cm</li>";
+
+            if( tall[i] < avg)
+                avg_below.push(member[i]);
+        }
+        out += "</ul>";
+        out += "평균키 : "+avg+"cm";
+        out += "<div> 평균키 미만 "+ avg_below+"</div>";
+        $("#result").html( out );
+    }
+    $("#name").text( member[++idx]);
+    $("#tall").val("");
+    $("#tall").focus();
+}
