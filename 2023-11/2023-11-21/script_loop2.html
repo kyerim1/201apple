@@ -254,16 +254,35 @@
         입력이 끝나면  결과 출력
         결과 출력 내용은 
         노인 : 65세 이상
-        성인 : 20세~64세
+        성인 : 20세~64세110
         청소년 : 8세~19세
         아동 : 1세~7세
 
         총원 10명 : 노인 2명, 성인 5명, 청소년 2명, 아동 3명
 
-
-
-
     */
+    var old=0, adult=0,teen=0, child=0, count=0;
+
+    var end=true; // 구성원나이를 입력 가능 또는 입력 불가능 하게 만들기위한 변수
+
+    function survey(){
+        if(end){
+            var age = Number( $("#age").val()  );
+            if( age>=65 ) old++;
+            else if( 20<=age && age<=64 ) adult++;
+            else if( 8<=age && age<=19 ) teen++;
+            else if( 1<=age && age<=7 ) child++;
+            else if( age==0 ){
+                end=false;
+                count--;
+            }
+            count++;
+            $("#result").html(
+                `총원 ${count}명 : 노인${old}명, 성인${adult}명, 청소년${teen}명, 아동${child}명 `
+            );
+        }
+    }
+    // linter 도구  자바스크립트 스타일 가이드를 얼마나 준수 작성 확인및 개선, 제안
 
 
     </script>
@@ -272,10 +291,12 @@
 </style>
 </head>
 <body>
-    <input type="text" id="num1">
-    <input type="text" id="num2">
-    <input type="text" id="num3">
-    <button onclick="find()">실행</button>
+    <input type="number" id="age" min="0" max="110">
+    <button onclick="survey()">입력</button>
+
+    <!-- <input type="text" id="num2">
+    <input type="text" id="num3"> -->
+    <!-- <button onclick="find()">실행</button> -->
 
     <div id="result"></div>
 
