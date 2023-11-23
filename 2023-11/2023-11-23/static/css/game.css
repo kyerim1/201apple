@@ -1,0 +1,58 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+#game_wrap{
+    width:500px;
+    margin:0 auto;
+    font-size:40px;
+    position:relative;
+}
+
+#game_board{
+    width:100%;
+    position:relative;
+    margin:30px 0;
+}
+#board{
+    border-collapse: collapse;
+    width:100%;
+}
+.numBox{
+    border:3px solid gray;
+    width:20%;
+    height:100px;
+    text-align: center;
+}
+.numBox:hover{
+    background:pink;
+}
+#game_input{
+    text-align: center;
+}
+#num{
+    font-size:25px;
+    text-align: center;
+    padding:5px;
+    width:100px;
+    border-color:red;
+}
+#game_input button{
+    border:0;
+    font-size:25px;
+    padding:6px 15px;
+    background:tomato;
+    color:#fff;
+    border-radius: 15px;
+    cursor: pointer;
+}
+#game_input button:hover{
+    background:#eee;
+    color:tomato;
+}
+
+
+#result_modal{
+    display:none;
+}
