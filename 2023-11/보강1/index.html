@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dsd</title>
+
+    <style>
+        /* css 
+        1. css를 적용할 대상 선택
+           - 태그이름선택
+           - 태그의 id 선택 -> #
+           - 태그의 class 선택 -> .
+        2. 브라켓 { } 열기
+        3. 브라켓 내부에 css 작성하기
+        */
+        #부모{
+            width:600px;
+            height:400px;
+            border:1px solid red;
+            position:absolute;
+            top:0;
+            left:400px;
+        }
+        #첫째{
+            background:green;
+            height:50px;
+            width:100px;
+            position:relative;
+            right:200px;
+            top:50px;
+        }
+        #둘째{
+            background:pink;
+            height:50px;
+            width:100px;
+            position: absolute;
+            right:200px;
+            top:0;
+        }
+        #셋째{
+            height:100px;
+        }
+        #작은아버지{
+            width:300px;
+            height:250px;
+            border:1px solid black;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="작은아버지"></div>
+    <div id="부모">
+        가나다라마바사
+
+        <div id="셋째"></div>
+
+        <div id="첫째"></div>
+        <div id="둘째"></div>
+    </div>
+</body>
+</html>
