@@ -1,0 +1,70 @@
+<!-- script_game.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<!-- jquery-->
+<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
+<script src="./static/javascript/game.js"></script>
+<link rel="stylesheet" href="./static/css/game.css">
+
+</head>
+<body>
+    
+    <div id="game_wrap">
+        <div id="game_board">
+            <table id="board">
+                <tr>
+                    <td class="numBox"></td>
+                    <td class="numBox"></td>
+                    <td class="numBox"></td>
+                    <td class="numBox"></td>
+                    <td class="numBox"></td>
+                </tr>
+                <tr>
+                    <td class="numBox"></td>
+                    <td class="numBox"></td>
+                    <td class="numBox"></td>
+                    <td class="numBox"></td>
+                    <td class="numBox"></td>
+                </tr>
+                <tr>
+                    <td class="numBox"></td>
+                    <td class="numBox"></td>
+                    <td class="numBox"></td>
+                    <td class="numBox"></td>
+                    <td class="numBox"></td>
+                </tr>
+                <tr>
+                    <td class="numBox"></td>
+                    <td class="numBox"></td>
+                    <td class="numBox"></td>
+                    <td class="numBox"></td>
+                    <td class="numBox"></td>
+                </tr>
+                <tr>
+                    <td class="numBox"></td>
+                    <td class="numBox"></td>
+                    <td class="numBox"></td>
+                    <td class="numBox"></td>
+                    <td class="numBox"></td>
+                </tr>
+            </table>
+        </div>
+        <div id="game_input">
+            <input type="text" id="num">
+            <button onclick="enter()">입력</button>
+        </div>
+        <div id="result_modal">
+            <div class="modal_bg"></div>
+            <div class="result_detail">
+                <h3 class="result"></h3>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!-- script_class.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<!-- jquery-->
+<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
+<script>
+    //  window.onload=function(){}
+    $(function(){
+        // var box = document.getElementsByClassName("box");
+        //document.querySelectorAll(".box");
+        //$(".box")
+        //box[2].innerHTML="1";
+        // for( var i=0; i<box.length; i++){
+        //     box[i].innerHTML = Math.floor(Math.random()*100)+1;
+        //     box[i].addEventListener("mouseover",function(){
+        //         this.style.fontSize="40px";
+        //     });
+        // }
+
+        //  이벤트 - 마우스 왼쪽클릭 : click , 더블클릭 : dbclick
+        //           마우스 오른쪽클릭 : rightclick 
+        //  마우스 누르면 : mousedown  , 마우스떼면  : mouseup
+        // 마우스 움직이면 : mousemove  , 마우스가 태그위로 : mouseover
+        // 마우스가 태그 벗어나면 : mouseout
+        // 키보드 누르면 : keydown   ,  키보드 떼면 : keyup
+        // 글자입력 되면 : keypress , 브라우저 크기변하면 : resize
+        // 브라우저 스크롤 움직이면 : scroll  ,  
+        // input태그 내용이변경되면 : change,  
+        // input 태그 선택하면 : select
+        
+        //alert( $(".box").length);
+
+        // for( var i =0; i<$(".box").length;  i++){
+        //     $(".box").eq(i).html( Math.floor(Math.random()*100)+1);
+        // }
+
+        // $.each( 반복대상 ,function(){  실행할 내용  });
+
+        $.each( $(".box"), function(){
+            $(this).html( Math.floor(Math.random()*100)+1 );
+        });
+
+        $(".box").on("click",function(){
+            $(".box").css("background","white");
+            $(this).css("background","red");
+            alert( $(this).text() );
+        });
+
+        $(".box").on("mouseover",function(){
+            $(this).css("font-size","40px");
+        });
+
+    });
+</script>
+
+<style>
+    #wrap{
+        width:800px;
+        margin:0 auto;
+        display:flex;
+        flex-wrap:wrap;
+        box-sizing: border-box;
+    }
+    .box{  
+        width:25%;
+        height:200px;
+        border:1px solid black;
+    }
+</style>
+
+</head>
+<body>
+    
+<div id="wrap">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</div>
+
+
+</body>
+</html>
