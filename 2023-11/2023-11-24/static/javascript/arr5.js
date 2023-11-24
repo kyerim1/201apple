@@ -78,18 +78,24 @@ $(document).on("keyup",function(key){
 // 직접 만드세요.  
 // w,a,s,d 에 대한 동작 구현 ,  검은색 벽을 통과하지 못하게 만들기
 
+    board[y][x]=0;
     switch(key.keyCode){ // 키보드에서 누른 키 w,a,s,d중 선택하기
         case 87:  // w키 누른경우 , 위
+            y = board[y-1][x]==1 ? y : --y;
             break;
         case 65: // a키 누른경우 , 왼쪽
+            x= board[y][x-1]==1 ? x : x--;
             break;
         case 83: // s키 누른경우 , 아래
+            y= board[y+1][x]==1 ? y : y++;
             break;
         case 68: // d키 누른경우 , 오른쪽
+            x = board[y][x+1]==1 ? x : x++;
             break;
         default:
             alert("w,a,s,d 를 방향키로 사용합니다.");
     }
+    board[y][x]=2;
     $("#box").html("");
     draw();
 
