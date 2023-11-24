@@ -12,6 +12,9 @@
     flex-wrap:wrap;
 }
 .pic{
-    width:50%;
+    width:25%;
+    height:50px;
+    overflow: hidden;
+    border:1px solid black;
 }
 .pic img{ width:100%;}
