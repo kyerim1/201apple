@@ -27,6 +27,36 @@
     // 입력한 평균 점수 이상인 학생들의 이름을 출력하세요.
     // 해당되는 학생이 한명도 없을시  조건에 맞는 학생이 없습니다.  출력
 
+    function search(){ //성적조회 버튼 클릭시 실행
+        var input_name = $("#name").val();// input태그에 입력한 이름 가져오기
+        var index = name.indexOf(input_name); // name배열에서 입력한 이름 찾아 인덱스얻기
+        if( index == -1 ) // name배열에 없는 이름이라면
+            $("#result").html("등록되지 않은 학생입니다.");
+        else{// name배열에 존재 하는 이름 이라면
+            $("#result").html(
+                `국어:${score[index][0]}점 수학:${score[index][1]}점 영어:${score[index][2]}점 
+                평균 : ${score[index][4]}`
+            );
+        }
+    }
+
+    function over(){  //검색 버튼 클릭시 실행
+        var avg_num = parseInt( $("#avg").val() ); // avg input태그에 입력한 값 가져오기
+
+        var output="";  // 학생들 이름만 저장할 변수
+        for( var i=0; i<score.length; i++){
+            if( score[i][4] >= avg_num ){ //입력한 점수이상인 학생 찾기
+                output += name[i]+ "  ";
+            }
+        }
+        if( output== "")
+            output="조건에 맞는 학생이 없습니다.";
+
+
+        $("#result").html(output);
+    }
+
+
 </script>
 
 </head>
