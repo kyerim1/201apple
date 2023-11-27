@@ -5,9 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입</title>
+<!--부트 스트랩-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+<!-- jquery-->
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="./static/css/main.css">
+<link rel="stylesheet" href="./static/css/sign.css">
 
 
-    
 </head>
 <body>
     
@@ -30,6 +37,79 @@
         </header>
         <main id="main">
             
+            <form name="signf" id="signf" method="get" action="join.html">
+                <div id="signWrap">
+                    <h2 class="pageTitle">회원가입</h2>
+                    <fieldset class="sign_essential">
+                        <legend>필수입력</legend>
+                        
+                        <div class="input_field">
+                            <label for="myid">아이디</label>
+                            <input type="text" name="myid" id="myid">
+                        </div>
+                        <div class="input_field">
+                            <label for="mypw">비밀번호</label>
+                            <input type="password" name="mypw" id="mypw">
+                        </div>
+                        <div class="input_field">
+                            <label for="pwre">비밀번호확인</label>
+                            <input type="password" name="pwre" id="pwre">
+                        </div>
+                        <div class="input_field">
+                            <label for="myemail">이메일</label>
+                            <input type="email" name="myemail" id="myemail">
+                        </div>
+                        <div class="input_field">
+                            <label for="">연락처</label>
+                            <input type="tel" name="myphone" id="myphone" pattern="[0-1]{3}-[0-9]{4}-[0-9]{4}">
+                        </div>
+
+                    </fieldset>
+
+                    <!-- 선택 입력 폼 -->
+                    <fieldset class="sign_select">
+                        <legend>선택입력</legend>
+
+                        <div class="select_input">
+                            <label for="myname">이름</label>
+                            <input type="text" name="myname" id="myname">
+                        </div>
+                        <div class="select_input">
+                            <label for="myaddr">주소</label>
+                            <div id="myaddr">
+                                <input type="number" name="pcode" id="pcode">
+                                <button>주소찾기</button>
+                                <input type="text" name="addr" id="addr">
+                            </div>
+                        </div>
+                        <div class="select_input">
+                            <label for="ability">능력</label>
+                            <input type="checkbox" name="ability" class="ability_list" value="인쇄물">인쇄물
+                            <input type="checkbox" name="ability" class="ability_list" value="앱">앱
+                            <input type="checkbox" name="ability" class="ability_list" value="제품디자인">제품디자인
+                            <input type="checkbox" name="ability" class="ability_list" value="소프트웨어개발">소프트웨어개발
+                            <input type="checkbox" name="ability" class="ability_list" value="간판">간판
+                            <input type="checkbox" name="ability" class="ability_list" value="세무">세무
+                            <input type="checkbox" name="ability" class="ability_list" value="번역">번역
+                            <input type="checkbox" name="ability" class="ability_list" value="출판">출판
+                            <input type="checkbox" name="ability" class="ability_list" value="욕실리모델링">욕실리모델링
+                            <input type="checkbox" name="ability" class="ability_list" value="중문시공">중문시공
+                        </div>
+                        <div class="select_input">
+                            <label for="route">유입경로</label>
+                            <select name="route" id="route">
+                                <option value="네이버광고">네이버광고</option>
+                                <option value="카카오채널">카카오채널</option>
+                                <option value="인스타">인스타</option>
+                                <option value="옥외광고">옥외광고</option>
+                            </select>
+                        </div>
+
+                    </fieldset>
+
+                </div>
+            </form>
+
         </main>
     </div>
 
