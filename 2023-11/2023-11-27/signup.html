@@ -14,6 +14,9 @@
 <link rel="stylesheet" href="./static/css/main.css">
 <link rel="stylesheet" href="./static/css/sign.css">
 
+<script src="./static/javascript/sign.js"></script>
+
+
 
 </head>
 <body>
@@ -49,7 +52,8 @@
                         </div>
                         <div class="input_field">
                             <label for="mypw">비밀번호</label>
-                            <input type="password" name="mypw" id="mypw">
+                            <input type="password" name="mypw" id="mypw" placeholder="비밀번호는6~12자 입니다.">
+                            <span class="pwvaild"></span>
                         </div>
                         <div class="input_field">
                             <label for="pwre">비밀번호확인</label>
@@ -60,7 +64,7 @@
                             <input type="email" name="myemail" id="myemail">
                         </div>
                         <div class="input_field">
-                            <label for="">연락처</label>
+                            <label for="myphone">연락처</label>
                             <input type="tel" name="myphone" id="myphone" pattern="[0-1]{3}-[0-9]{4}-[0-9]{4}">
                         </div>
 
@@ -71,8 +75,8 @@
                         <legend>선택입력</legend>
 
                         <div class="select_input">
-                            <label for="myname">이름</label>
                             <input type="text" name="myname" id="myname">
+                            <label for="myname"><span>이름</span></label>
                         </div>
                         <div class="select_input">
                             <label for="myaddr">주소</label>
@@ -84,34 +88,46 @@
                         </div>
                         <div class="select_input">
                             <label for="ability">능력</label>
-                            <input type="checkbox" name="ability" class="ability_list" value="인쇄물">인쇄물
-                            <input type="checkbox" name="ability" class="ability_list" value="앱">앱
-                            <input type="checkbox" name="ability" class="ability_list" value="제품디자인">제품디자인
-                            <input type="checkbox" name="ability" class="ability_list" value="소프트웨어개발">소프트웨어개발
-                            <input type="checkbox" name="ability" class="ability_list" value="간판">간판
-                            <input type="checkbox" name="ability" class="ability_list" value="세무">세무
-                            <input type="checkbox" name="ability" class="ability_list" value="번역">번역
-                            <input type="checkbox" name="ability" class="ability_list" value="출판">출판
-                            <input type="checkbox" name="ability" class="ability_list" value="욕실리모델링">욕실리모델링
-                            <input type="checkbox" name="ability" class="ability_list" value="중문시공">중문시공
+                            <div class="ability_check">
+                                <span><input type="checkbox" name="ability" class="ability_list" value="인쇄물">인쇄물</span>
+                                <span><input type="checkbox" name="ability" class="ability_list" value="앱">앱</span>
+                                <span><input type="checkbox" name="ability" class="ability_list" value="제품디자인">제품디자인</span>
+                                <span><input type="checkbox" name="ability" class="ability_list" value="소프트웨어개발">소프트웨어개발</span>
+                                <span><input type="checkbox" name="ability" class="ability_list" value="간판">간판</span>
+                                <span><input type="checkbox" name="ability" class="ability_list" value="세무">세무</span>
+                                <span><input type="checkbox" name="ability" class="ability_list" value="번역">번역</span>
+                                <span><input type="checkbox" name="ability" class="ability_list" value="출판">출판</span>
+                                <span><input type="checkbox" name="ability" class="ability_list" value="욕실리모델링">욕실리모델링</span>
+                                <span><input type="checkbox" name="ability" class="ability_list" value="중문시공">중문시공</span>
+                            </div>
                         </div>
                         <div class="select_input">
-                            <label for="route">유입경로</label>
+                            
                             <select name="route" id="route">
                                 <option value="네이버광고">네이버광고</option>
                                 <option value="카카오채널">카카오채널</option>
                                 <option value="인스타">인스타</option>
                                 <option value="옥외광고">옥외광고</option>
                             </select>
+                            <span class="arrow"><i class="bi bi-caret-down-fill"></i></span>
                         </div>
+
+                        <input type="file" name="myface" id="myface">
 
                     </fieldset>
 
+                    <button type="button" id="before">이전</button>
+                    <button type="button" id="join">가입</button>
                 </div>
             </form>
 
         </main>
     </div>
+
+
+    <input type="checkbox" name="a" value="1" id="a1"><label for="a1">게임</label>
+    <input type="checkbox" name="a" value="2" id="b1"><label for="b1">영화</label>
+    <input type="checkbox" name="a" value="3" id="c1"><label for="c1">음악</label>
 
 </body>
 </html>
