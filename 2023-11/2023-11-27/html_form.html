@@ -1,0 +1,86 @@
+<!--  html_form.html  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--   form 데이터 전송을 위한 태그
+    form 속성  
+         이름지어주기 - id, class, name 
+         method - 전송하는방법
+                 get  : 데이터를 있는그대로 서버에 전달(데이터 노출)
+                 post : 데이터를 변환 하여 서버에 전달(압축, 암호화)
+         action - 데이터 전송할 곳 지정 
+         enctype - 데이터 형식 지정( 이미지 , 동영상, 음악 등등)
+                 : multipart/form-data
+        
+        데이터가 입력,선택 된  태그에 반드시 name이 존재해야 데이터전송가능
+-->
+    <form method="get" action="login_check.jsp">
+        <input type="text" name="text1" placeholder="이름입력"><br>
+        <input type="password" name="pass">  <br>
+        <input type="number" name="age" min="1" max="10">  <br>
+        <input type="color" name="mycolor" > <br>
+        <input type="date" name="today" value="2023-11-20" min="2003-01-01" max="2023-11-20">  <br>
+        <input type="month" name="todayMonth">  <br>
+        <input type="datetime-local" name="todaytime"> <br>
+        <input type="email" name="email" required> <br>
+        <input type="image" name="myimg" src="https://loremflickr.com/50/50" > <br>
+        <!--  이미지로 전송버튼을 구성  -->
+        <input type="button" value="가입"> 
+        <input type="submit" value="전송">
+        <input type="reset" value="작성취소">
+        <input type="time" name="time">  <br>
+        <input type="week" name="thisweek"> <br>
+        <input type="tel" name="mytel" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}">  <br>
+        <input type="url" name="nowurl">  <br>
+        <input type="range" name="width" min="100" max="200" step="10"> <br>
+        <input type="checkbox" name="interest" value="축구">축구
+        <input type="checkbox" name="interest" value="게임">게임
+        <input type="checkbox" name="interest" value="영화">영화 <br>
+        <!-- checkbox는 여러데이터를 그룹화 하여 사용하는 input태그이다.
+             반드시 그룹으로 묶어 주기위해서는 name이 같아야한다.-->
+        <input type="radio" name="gender" value="남">남자
+        <input type="radio" name="gender" value="여">여자
+        <input type="file" name="youimg">
+        <input type="hidden" name="ids" value="1">
+
+        <textarea name="memo"></textarea>
+        <br>
+        <select name="game" multiple>
+            <option value="lol">리그오브레전드</option>
+            <option value="gta">gta</option>
+            <option value="fifa">피라온라인</option>
+        </select>
+
+        <br>
+        <input list="lang">
+        <datalist id="lang"  name="language">
+            <option value="html">html</option>
+            <option value="css">css</option>
+            <option value="java">java</option>
+        </datalist>
+    </form>
+
+    <form oninput="res.value = parseInt(a.value)+ parseInt(b.value)">
+        <input type="number" id="a" name="a"> +
+        <input type="number" id="b" name="b"> =
+        <output name="res" for="a b"></output> 
+
+    </form>
+    
+</body>
+</html>
+
+<!--  
+    월  - html form - style, javascript로 값 가져오는방법
+    화 - css animation
+    수 - mediaquery , grid
+    목 - javascript - function
+    금 - javascript - function
+
+
+-->
