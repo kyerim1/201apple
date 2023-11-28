@@ -18,6 +18,20 @@ $(function(){
         $("#result_modal").hide();
     });
 
+    $.each($(".n"),function(i){
+        $(this).text(i+1);
+        $(this).data("color","false");
+    })
+    $(".n").on("click",function(){
+        if($(this).data("color") == "false"){
+            $(this).css("background","pink");
+            $(this).data("color","true")
+        }else{
+            $(this).css("background","white");
+            $(this).data("color","false")
+        }
+    });
+
     $.each( board , function(i,v){  // i-인덱스, v- 배열값
         $(".numBox").eq(i).text( v );
     });
@@ -26,6 +40,8 @@ $(function(){
         $(this).css("background","black");
         $(this).css("color","white");
         var idx = $(".numBox").index(this);
+        $(".n").eq(board[idx]-1).css("background","pink");
+        $(".n").eq(board[idx]-1).data("color","true")
         board[idx]=0;
         endgame();
     });

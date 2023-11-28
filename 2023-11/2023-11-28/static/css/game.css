@@ -80,3 +80,13 @@
     justify-content: center;
     align-items: center;
 }
+
+#state{
+    display:flex;
+    width:1000px;
+    margin :0 auto;
+    flex-wrap: wrap;
+    row-gap:10px;
+}
+.n{ width:4%; text-align: center;
+border:1px solid black; cursor: pointer;}
