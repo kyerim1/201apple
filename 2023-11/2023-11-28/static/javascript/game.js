@@ -14,6 +14,10 @@ for(var i=0; i<board.length; i++)
 
 $(function(){
 
+    $(".modal_bg").on("click",function(){
+        $("#result_modal").hide();
+    });
+
     $.each( board , function(i,v){  // i-인덱스, v- 배열값
         $(".numBox").eq(i).text( v );
     });
@@ -48,9 +52,11 @@ function endgame(){
     }
 
     if ( end==5 ){  // 5줄 빙고 완성
-        
+        $("#result_modal").show(); // $("#result_modal").css("display","block");
+        $(".result").text("5줄 빙고 완성");
     }else if( end >=6 ){ // 빙고 실패
-
+        $("#result_modal").show();
+        $(".result").text("빙고실패");
     }
 
 }
