@@ -1,0 +1,33 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+ul{ list-style-type: none;}
+img{ width:100%; }
+
+#wrap{
+    width:90%;
+    min-width:315px;
+    margin:0 auto;
+}
+
+#header{
+    width:100%;
+    padding:10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.pc_search{
+    display:none;
+}
+#nav{
+    display:none;
+}
+#header .logo{
+    width:60px; height:50px;
+    background:#FFEAEA;
+}
+.mobile_menu{font-size:2rem;}
+.mobile_search{ font-size:2em;}

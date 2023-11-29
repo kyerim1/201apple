@@ -79,3 +79,35 @@ img{ width:100%; }
     right:50px;
     top:20px;
 }
+
+/*  태블릿 용 */
+@media screen and (max-width:1024px){
+    /* max-width:1024px ->  화면 너비가 1024px 이하일때 */
+    
+    #nav{  order:2; }
+    .logo{
+        width:100px;
+        height:100px;
+        order:1;
+    }
+    .item{
+        width:45%;
+    }
+    #footer .logo{
+        width:30px;
+        height:30px;
+    }
+}
+
+/*  스마트폰 용 (세로) */
+@media screen and (max-width:480px){
+    #header{
+        justify-content: space-between;
+    }
+    #nav{
+        width:50px;
+    }
+    .item{
+        width:90%;
+    }
+}
