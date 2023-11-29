@@ -1,0 +1,201 @@
+<!--  animation2.html  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* #loading1{
+            width:500px; height:500px;
+            background:skyblue;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap:10px;
+        }
+        .loader{
+            width:300px;height:50px;
+            border-radius: 30px;
+            position:relative;
+            overflow: hidden;
+        }
+        .loader::after{
+            content:"";
+            position:absolute;
+            background:#fff;
+            width:200px;
+            height:50px;
+            border-radius: 30px;
+            animation: loading1 4s ease-in-out infinite;
+        }
+        .loader:nth-child(2)::after{ animation-delay: 0.2s ;}
+        .loader:nth-child(3)::after{ animation-delay: 0.4s ;}
+
+        @keyframes loading1{
+            0%{ left:-145px;}
+            50%{ left:calc( 100% - 50px );}
+            100%{ left:-145px;}
+        }
+
+        #loading2{ 
+            width:500px;height:500px;
+            background:#000;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            position:relative;
+        }
+        .ring{
+            position:relative;
+            width:200px; height:200px;
+            border:5px solid #fff;
+            border-radius: 100%;
+        }
+        .ball_load{
+            position:absolute;
+            width:50px; height:200px;
+            left:75px; top:0;
+            animation: loading2 2s linear infinite;
+        }
+        .ball{
+            position:absolute;
+            left:0; top:-25px;
+            width:50px; height:50px;
+            border-radius: 100%;
+            background:#eee;
+        }
+        @keyframes loading2{
+            0%{ transform: rotate(0deg);}
+            100%{ transform: rotate(360deg);}
+        }
+
+        #dice{
+            width:800px; height:800px;
+            background:pink;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            position:relative;
+        }
+        #box{
+            height:300px; width:300px;
+            position: absolute;
+            transform-style: preserve-3d ;
+            animation:dice 3s ease-in infinite;
+
+        }
+
+        .number{
+            height:100%; width:100%;
+            position:absolute;
+            top:0; left:0;
+            font-size:100px;
+            color:#000;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0.7;
+        }
+        .one{
+            background:#eee;
+            transform: translateZ(150px);
+        }
+        .two{
+            background:#999;
+            transform: translateY(150px) rotateX(90deg);
+        }
+        .three{
+            background:#ccc;
+            transform: translateX(-150px) rotateY(90deg);
+        }
+        .four{
+             background:#bbb;
+             transform: translateX(150px) rotateY(90deg);
+        }
+        .five{
+            background:#aaa;
+            transform: translateY(-150px) rotateX(90deg);
+        }
+        .six{
+            background:#ddd;
+            transform: translateZ(-150px);
+            
+        }
+        @keyframes dice{
+            100%{
+                transform: rotateY(360deg) rotateX(720deg) rotateZ(1080deg);
+            }
+        }
+*/
+
+        img{  height:100%;  }
+        #box{
+            width:30px; height:30px;
+            overflow: hidden;
+            border-radius: 40%;
+            position:absolute;
+            left:50%;   top:0;
+            transform: translateX(-50%);
+            animation:move 5s linear infinite alternate;
+        }
+
+        @keyframes move{
+            0%{ width:30px; height:30px; top:0; }
+            100%{ 
+                width:1000px; height:1000px; 
+                border-radius: 0;
+                top:50%; 
+                transform: translate(-50%,-50%);
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="box">
+        <img src="./static/images/pic11.jpg" alt="이미지">
+    </div>
+    <!--  
+        이미지 1장 필요
+        1.  처음에 이미지의 크기는 30px,30px 이고 타원형 이다.
+        2.  애니메이션 동작 은  이미지가 점점 커지면서  1000px,1000px 크기가 된다.
+        3.  1000px의 크기가 되면 타원형 에서  사각형으로 변환
+        4.  사각형 모양에서 다시 타원형으로 변하면서 30px 로 작아진다.
+        5.  처음 이미지의 위치는 브라우저 의 중앙 상단에 위치
+        6.  1000px이 되면 브라우저 화면에서 중앙에 위치한다. 
+
+    -->
+<!-- 
+    <div id="dice">
+        <div id="box">
+            <div class="number one">1</div>
+            <div class="number two">2</div>
+            <div class="number three">3</div>
+            <div class="number four">4</div>
+            <div class="number five">5</div>
+            <div class="number six">6</div>
+        </div>
+    </div>
+
+    
+    <div id="loading1">
+        <div class="loader"></div>
+        <div class="loader"></div>
+        <div class="loader"></div>
+    </div>
+
+    <div id="loading2">
+        <div class="ring">
+            <div class="ball_load">
+                <div class="ball"></div>    
+            </div>
+        </div>
+    </div> -->
+
+</body>
+</html>
