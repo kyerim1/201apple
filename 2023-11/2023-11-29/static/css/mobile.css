@@ -3,6 +3,9 @@
     margin:0;
     box-sizing: border-box;
 }
+
+html{ font-size:10px;}
+
 ul{ list-style-type: none;}
 img{ width:100%; }
 
@@ -18,6 +21,7 @@ img{ width:100%; }
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size:30px;
 }
 .pc_search{
     display:none;
@@ -31,3 +35,112 @@ img{ width:100%; }
 }
 .mobile_menu{font-size:2rem;}
 .mobile_search{ font-size:2em;}
+
+#main{
+    width:100%;
+    padding:50px 0;
+    background:pink;
+}
+.content{
+    width:100%;
+    padding:0 10%;
+}
+.item{
+    margin-top:20px;
+}
+
+#footer{
+    width:100%;
+    background:dodgerblue;
+    padding:50px;
+    position:relative;
+}
+.addr, .tel{
+    height:2rem;
+    background:antiquewhite;
+    width:60%;
+    position:relative;
+    left:40%;
+}
+#footer .logo{
+    height:4rem;
+    width:4rem;
+    background:black;
+    position:absolute;
+    top:50px;
+}
+
+/* 태블릿 용 */
+@media screen and (min-width:768px){
+    html{font-size:15px;}
+    #header{font-size:20px;}
+    .content{
+        display:flex;
+        flex-wrap:wrap;
+        padding:0;
+        justify-content: center;
+        gap:20px;
+    }
+    .item{
+        margin:0;
+        width:45%;
+    }
+
+}
+
+/*  PC 용 */
+@media screen and (min-width:1024px){
+    .mobile_menu , .mobile_search{
+        display:none;
+    }
+    .pc_search , #nav{
+        display:block;
+        width:35%;
+    }
+    .pc_search input{
+        height:30px;
+        padding-left:8px;
+        font-size:1.5em;
+        width:8em;
+    }
+    #nav ul{
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .menu{
+        width:70px;
+        height:25px;
+    }
+    .content{
+        gap:25px;
+    }
+    .item{
+        width:30%;
+    }
+    #wrap{
+        max-width:1400px;
+    }
+
+    #footer{
+        display:flex;
+    }
+    .addr , .tel{
+        width:35%;
+        left:0;
+    }
+    #footer .logo{
+        width:8rem; height:8rem;
+        position:relative;
+        top:2rem;
+        right:70%;
+    }
+
+
+    /*
+        이미지 배치 -  한줄에 3장, 이미지사이 간격은25px
+        footer 
+          - addr,tel 을 한줄에 배치 , footer기준 왼쪽에배치
+          - logo는  addr,tel 밑에 배치, 이전 크기대비 2배 사이즈업
+    */
+}

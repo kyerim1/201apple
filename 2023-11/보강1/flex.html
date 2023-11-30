@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        #wrap1{
+            width:1000px;
+            position:relative;
+        }
+        #header1{
+            width:100%;
+            position:relative;
+            background:pink;
+            display:flex;
+            flex-direction: row;
+            justify-content: center;  /* 수평정렬 */
+            align-items: center;  /* 수직정렬 */
+            flex-wrap:wrap; /* 여러개의 아이템들을  행과 열의 공간으로 표현  */
+                            /* 다중행, 다중열 사용시  */
+        }
+        /* .menu{
+            position:absolute;
+        }
+        .menu:nth-child(1){ left:0; }
+        .menu:nth-child(2){ left: 100px;}
+        .menu:nth-child(3){ left: 200px;}
+        .menu:nth-child(4){ left: 300px;}
+        .menu:nth-child(5){ left: 400px;} */
+
+        /* .menu{
+            float:left;
+             padding:0 30px; 
+            margin:0 30px;
+        } */
+
+    </style>
+</head>
+<body>
+    
+    <div id="wrap1">
+        <div id="header1">
+            <div class="menu">메뉴1</div>
+            <div class="menu">메뉴2</div>
+            <div class="menu">메뉴3</div>
+            <div class="menu">메뉴4</div>
+            <div class="menu">메뉴5</div>
+        </div>
+    </div>
+
+</body>
+</html>
