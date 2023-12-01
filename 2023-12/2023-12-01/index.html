@@ -21,23 +21,102 @@
 <body>
     
     <div id="wrap">
-        <div id="top"></div>
+        <div id="top">
+            <div class="topMenu">
+                <span>
+                    <a href="./signin.html">로그인</a>
+                </span>
+                <span>
+                    <a href="./signup.html">회원가입</a>
+                </span>
+                <span>
+                    <a href="">문의</a>
+                </span>
+            </div>
+        </div>
         <div id="header">
             <div id="nav">
-                <div class="logo"></div>
+                <div class="logo" onclick="javascript:location.href='./index.html';"></div>
                 <div class="menu">
                     <ul class="menuList">
-                        <li class="menuItem"></li>
-                        <li class="menuItem"></li>
-                        <li class="menuItem"></li>
-                        <li class="menuItem"></li>
-                        <li class="menuItem"></li>
-                        <li class="menuItem"></li>
+                        <li class="menuItem">
+                            FreeDomLife
+                            <ul class="subMenu">
+                                <li class="subItem">
+                                    <a href="./freetalk.html">나혼자산다</a>
+                                </li>
+                                <li class="subItem">혼밥</li>
+                                <li class="subItem">혼술</li>
+                            </ul>
+                        </li>
+                        <li class="menuItem">
+                            Redemption
+                            <ul class="subMenu">
+                                <li class="subItem">연애와 구속</li>
+                                <li class="subItem">회사와 억압</li>
+                            </ul>
+                        </li>
+                        <li class="menuItem">
+                            MyLife
+                            <ul class="subMenu">
+                                <li class="subItem">슬기로운사회생활</li>
+                                <li class="subItem">
+                                    행복한연애생활
+                                </li>
+                                <li class="subItem">홀로서기</li>
+                            </ul>
+                        </li>
+                        <li class="menuItem">LifeDiary</li>
+                        <li class="menuItem">
+                            MovieIs
+                            <ul class="subMenu">
+                                <li class="subItem">액션/SF</li>
+                                <li class="subItem">공포/스릴러</li>
+                                <li class="subItem">코미디/드라마</li>
+                                <li class="subItem">혼자본영화</li>
+                            </ul>
+                        </li>
+                        <li class="menuItem">Customer</li>
                     </ul>
                 </div>
             </div>
         </div>
 
+        <!-- index.html 에 전용 -->
+        <div id="searchWrap">
+            <div class="search">
+                <input type="text" name="searchWord" id="searchWord">
+                <label><i class="bi bi-search"></i></label>
+            </div>
+        </div>
+        <div id="slideWrap">
+            <div id="slideBox">
+                <div class="slide">
+                    <ul class="slideList">
+                        <li class="slideImg"><img src="./static/images/slide1.jpg"></li>
+                        <li class="slideImg"><img src="./static/images/slide2.jpg"></li>
+                        <li class="slideImg"><img src="./static/images/slide3.jpg"></li>
+                        <li class="slideImg"><img src="./static/images/slide4.jpg"></li>
+                    </ul>
+                </div>
+                <p class="leftBt"><span><i class="bi bi-chevron-left"></i></span></p>
+                <p class="rightBt"><span><i class="bi bi-chevron-right"></i></span></p>
+            </div>
+        </div>
+        <div id="main">
+            <div class="gridTest">
+                <div class="gridItem"><img src="https://loremflickr.com/400/820/free" alt=""></div>
+                <div class="gridItem"><img src="https://loremflickr.com/400/400/life" alt=""></div>
+                <div class="gridItem"><img src="https://loremflickr.com/400/400/beer" alt=""></div>
+                <div class="gridItem"><img src="https://loremflickr.com/810/400/travel" alt=""></div>
+            </div>
+        </div>
+        
+        
+        
+        <div id="footer">
+            <h4>프리덤클럽 Corp.</h4>
+        </div>
     </div>
 
 </body>
