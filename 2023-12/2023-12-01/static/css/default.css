@@ -90,6 +90,7 @@ img {width:100%;}
     background:#222845ad;
     position:sticky;
     top:0;
+    z-index:1000;
 }
 #header #nav{
     width:1200px;

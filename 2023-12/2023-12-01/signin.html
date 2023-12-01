@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title> 프리덤 로그인 </title>
     <!--부트 스트랩-->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
@@ -13,7 +13,9 @@
 
 <link rel="icon" href="./static/images/KR-logo.ico">
 <link rel="stylesheet" href="./static/css/default.css">
+<link rel="stylesheet" href="./static/css/signin.css">
 
+<script src="./static/javascript/signin.js"></script>
 
 
 </head>
@@ -77,6 +79,40 @@
                         </li>
                         <li class="menuItem">Customer</li>
                     </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 로그인 영역  -->
+        <div id="main">
+            <div id="loginWrap">
+                <div class="logo">
+                    <img src="./static/images/logo.png" alt="로고">
+                </div>
+                <div class="title"> 
+                    <h2> LOGIN </h2>
+                </div>
+                <div class="loginBox">
+                    <form method="post" action="signIn" name="loginfm" id="loginfm">
+                        <div class="login">
+                            <div class="loginId">
+                                <input type="text" name="id" id="id">
+                                <label><i class="bi bi-person"></i></label>
+                            </div>
+                            <div class="loginPw">
+                                <input type="password" name="pw" id="pw">
+                                <label><i class="bi bi-key"></i></label>
+                            </div>
+                            <div class="loginBt">
+                                <button type="button">LOGIN</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="memberNav">
+                    <p><a href="">아이디/비밀번호 찾기</a></p>
+                    <p><a href="./signup.html">회원가입</a></p>
                 </div>
             </div>
         </div>
