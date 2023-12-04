@@ -1,7 +1,9 @@
 
+
+
+
 $(function(){
     $("#search").on("keyup",function(){
-
         var word = $(this).val();
 
         $(".detail>tr").filter(

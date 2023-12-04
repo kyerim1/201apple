@@ -11,7 +11,7 @@ let same=false; //같은 이미지 찾은경우  감추기 안되게
 
 $(function(){
     box = $(".pic").length;
-
+    a= parseInt(box/2)
     for( var i=1; i <= parseInt(box/2); i++ ){
         var tmp = new Array();
         for(var k=1; k <= parseInt(box/2); k++){
