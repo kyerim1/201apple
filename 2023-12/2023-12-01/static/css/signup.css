@@ -1,0 +1,48 @@
+#main{
+    width:1200px;
+    margin: 0 auto;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding:50px 0;
+}
+#joinBox{
+    width:400px;
+    display:flex;
+    flex-direction: column;
+    row-gap:40px;
+}
+#joinBox .join_input{
+    width:100%;
+    position:relative;
+}
+.join_input input + label{
+    position:absolute;
+    left:10px;
+    top:50%;
+    transform: translateY(-50%);
+    color:#fff;
+}
+.join_input input{
+    width:100%;
+    height:50px;
+}
+
+.join_input:nth-child(5) input{
+    display:none;
+}
+#select_face{
+    position:relative;
+    left:100px;
+    width:60px;
+    height:80px;
+}
+
+.joinBt{
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+}
+.joinBt button{
+    padding:5px 20px;
+}

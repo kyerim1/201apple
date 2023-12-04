@@ -13,6 +13,9 @@
 
 <link rel="icon" href="./static/images/KR-logo.ico">
 <link rel="stylesheet" href="./static/css/default.css">
+<link rel="stylesheet" href="./static/css/signup.css">
+
+<script src="./static/javascript/signup.js"></script>
 
 
 </head>
@@ -76,6 +79,40 @@
                     </ul>
                 </div>
             </div>
+        </div>
+
+
+        <!-- 회원가입 내용 -->
+        <div id="main">
+            <form enctype="multipart/form-data" method="post" action="signup" name="signfm" id="signfm">
+                <div id="joinBox">
+                    <div class="join_input">
+                        <input type="text" name="id" id="id">
+                        <label for="id">아이디</label>
+                    </div>
+                    <div class="join_input">
+                        <input type="password" name="pw" id="pw">
+                        <label for="pw">비밀번호</label>
+                    </div>
+                    <div class="join_input">
+                        <input type="password" id="pwre">
+                        <label for="pwre">비밀번호 확인</label>
+                    </div>
+                    <div class="join_input">
+                        <input type="email" name="email" id="email">
+                        <label for="email">이메일</label>
+                    </div>
+                    <div class="join_input">
+                        <input type="file" name="face" id="face">
+                        <label for="face">내사진</label>
+                        <img id="select_face">
+                    </div>
+                    <div class="joinBt">
+                        <button type="button" id="bt">회원가입</button>
+                        <button type="reset">취소</button>
+                    </div>
+                </div>
+            </form>
         </div>
 
 

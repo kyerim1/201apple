@@ -1,0 +1,34 @@
+#main{
+    width:1200px;
+    margin:0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding:50px 0;
+    row-gap:50px;
+}
+.boardSearch{
+    display:flex;
+    width:400px;
+    align-items: center;
+    justify-content: space-between;
+}
+#search{
+    width:350px;
+}
+.boardBox{
+    width:750px;
+}
+.board{
+    width:100%;
+    border-collapse: collapse;
+}
+.board td,.board th{
+    border:1px solid #fff;
+    height:50px;
+}
+.board tr:nth-child(even){
+    background:#868686;
+    color:#fff;
+}
