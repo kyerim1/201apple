@@ -11,7 +11,7 @@
     <script>
         $(function(){
 
-            $(".house").on("click", update );
+            $(".house").on("dblclick", update );
 
 
         });
@@ -27,28 +27,90 @@
         // on("이벤트명" , 이벤트발생시 실행할 함수 );
         // 이벤트 발생시 함수는 익명함수(function(){}) 이거나 함수명 만 작성
 
+        // input type이 날짜 또는 시간 형식일경우에
+        //  value 값은 형태가  2023-12-01 11:09  형식이다.
+        // 즉  input type=date value='2023-12-01'  이 되어야 한다.
+
         function update(){
             var td = $(this);  // 클릭한 td 태그
-            var td_text = td.text();  // 클릭한 td 태그안의 텍스트 
+            
+            var bt = "<button class='modify'>수정</button>";
+            var htmlTag= makeHtml(td);
 
-            td.removeClass("house"); //removeClass(삭제 할 클래스명 )
-            td.addClass("change"); // addClass(추가 할 클래스명)
+            td.html( htmlTag + bt );
 
-            td.html(`<input type=text value='${td_text}'> 
-                     <button class='modify'>수정</button>`);
-            $(".change>.modify").on("click", function(){
-                save( $(".change") );
+            $(".modify").on("click", function(){
+                save( td );
             });
-
-
         }
 
+
+        function makeHtml( td ){
+            var td_text = td.text();  // 클릭한 td 태그안의 텍스트 
+            var type="text";
+            if( td.hasClass("payment") ){
+                let pay = ["카카오체크카드","국민체크카드","현대카드","우리체크카드"];
+
+                htmlTag=`<select id='pay'> `;
+                for( var card of pay){
+                    htmlTag += `<option value='${card}' ${td_text===card? 'selected':'' }>${card}</option>`;
+                }
+
+                htmlTag += `</select>`;
+                return htmlTag;
+            }else{
+
+                if ( td.hasClass("date")  ){  
+                // 12.1 ->  12   1  ->  2023 +  12  +  1  -> 2023-12-01
+                    type="date";
+                    td_text = changeDate(td_text);
+                }
+                htmlTag = `<input type='${type}' value='${td_text}'>`;
+                return htmlTag;
+            }
+        }
+
+
+
+// 내용이 복잡 해지는 경우 분할 하여 코드가 한곳에 집중 되는것을 방지한다.
+// 코드가 한곳에 집중되어 작성되면  개발자 입장에서 코드를 파악하기 힘들다.
+// 코드를 정리 하여 작성하는 것  개발자가 가져야할 습관중 하나이다.
+
+
+        function changeDate(date){
+        //td_text ="2023-"+td_text.split(".")[0] +"-"+ td_text.split(".")[1];
+
+            if( date.includes("-")){  // 2023-12-01   ,   12.1
+                return Number( date.split("-")[1] ) +"."+ Number( date.split("-")[2]  );
+            }else{
+                let month = digits( date.split(".")[0] );
+                let day = digits( date.split(".")[1] );
+
+                return "2023-"+month+"-"+day;
+            }
+        }
+
+
+//  중복 적으로 코드가 사용되는경우  함수로 구현 한다.
+        function digits( num ){
+            if( num.length ==1 )
+                num = "0"+num;
+            return num;
+        }
+
+
         function save( t ){ // 수정버튼 클릭이벤트 등록시 td를 t변수로 전달받음
-            var text = t.children("input").val(); // input 태그에 작성된 텍스트
-            t.text( text );
-            console.log(t);
-            t.on("click",update);
-            
+           //select 태그의 선택한 옵션이 td의 text로 저장될수 있게 만들기
+            var tag = t.hasClass("payment") ? "select" : "input";
+
+            var text = t.children(tag).val(); // input 태그에 작성된 텍스트
+           
+
+            if( t.hasClass("date") ){
+                text = changeDate( text );
+            }
+
+            t.text( text );            
         }
 
     </script>
