@@ -1,0 +1,76 @@
+<!--  object1.html  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+ var a = "김유신";
+//  객체 - 의사나 행위가 미치는 대상 
+//         의사 - 무엇을 하고자 하는 생각
+//         행위 -  행동
+
+//  자바스크립트 객체에  데이터는   key:value   1:1 로 표현된다.
+//  key는 객체 내부에서  유일한 명칭이여야 한다. key는 중복사용 하지마세요
+
+var obj1 = {"이름":"김유신",  age:23 , 직업:"군인" ,"name":"김유신"  };
+
+// function을 사용한  생성자 함수 라는 것으로 객체를 생성한다.
+
+// function apple(){  // 생성자 함수
+//     this.name = "노재홍";
+//     this.age = 20;
+//     this.birth = function(){ document.write( 2023-this.age ); }
+// }
+
+// let you = new Array();
+// you.push(  new apple()  );
+// you.push( new apple() );
+// you.push( new apple() );
+
+// you[0].birth();
+
+// document.write(  you[0]["name"]  + "   " +  you[0].age  );
+
+// // html태그들의 style과 id,class, 이벤트 들을 정하여 태그 생성을 할 수 있다.
+// // 데이터들을 보다 관리가 용이한 구조로 만들어 사용할 수있다.
+
+
+// //  이름 -  key ,   김유신 - value
+
+// document.write( obj1['이름']);
+// document.write(  obj1['age']  );
+
+
+
+function myButton( bgcolor, fsize, width, height, bdcolor ){  //생성자함수,  내가원하는 스타일의 버튼 만들기
+
+    this.bgcolor = bgcolor;
+    this.fontSize = fsize;
+    this.width = width;
+    this.height = height;
+    this.borderColor = bdcolor;
+    this.make=function(){
+        document.write( `<button 
+        style='background:${this.bgcolor}; font-size:${this.fontSize};
+           width:${this.width}; height:${this.height};
+           border-color:${this.borderColor};
+        
+        '>내 꺼 버튼</button>`  );
+    };
+}
+
+
+let mybt = new myButton("pink", "30px", "200px","50px", "blue");
+mybt.make();
+
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
