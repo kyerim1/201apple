@@ -1,0 +1,59 @@
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+img { width:100%;  }
+
+#screen{
+    width:100%;
+    display: flex;
+    position:relative;
+}
+
+#comView{
+    width:50%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+#comView .com{
+    width:80%;
+}
+
+
+#userView{
+    width:50%;
+    display:flex;
+    flex-direction: column;
+    row-gap:20px;
+    justify-content: center;
+    align-items: center;
+}
+#userView .user{
+    width:50%;
+    cursor: pointer;
+    padding:20px;
+    border-radius: 55px;
+}
+#userView .user:hover{
+    background:pink;
+}
+
+#result{
+    position:absolute;
+    top:20%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+#result .bt{
+    padding:20px 0;
+}
+#result .bt button{
+    font-size:30px;
+    padding:10px;
+    border:3px solid pink;
+    background:none;
+    cursor: pointer;
+}
