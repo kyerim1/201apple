@@ -1,0 +1,34 @@
+/*  table.css  */
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+#wrap{
+    width:100%;
+    text-align: center;
+    padding:50px 0;
+}
+
+#wrap button{
+    font-size:20px;
+    padding:5px 15px;
+    background:#227788;
+    color:#fff;
+    font-weight:800;
+    border-radius: 10px;
+}
+#draw{
+    margin-top:20px;
+    padding-top:30px;
+    border-top:1px solid gray;
+}
+
+#draw table{
+    border-collapse: collapse;
+}
+#draw table tr td{
+    border:1px solid black;
+}

@@ -1,0 +1,28 @@
+/* color.css  */
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+#colorBox{
+    width:100%;
+    padding:20px;
+    text-align: center;
+}
+button{
+    width:150px; font-size:20px;
+    padding:5px 15px;
+}
+.colorList{
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+    margin-bottom:20px;
+}
+.color{
+    width:80px;
+    height:30px;
+}

@@ -1,0 +1,28 @@
+/* make.css */
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+#makeBox{
+    width:100%;
+    text-align: center;
+    padding:30px 0;
+}
+.input {
+    font-size:20px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom:10px;
+}
+.input input{
+    height:30px;
+    font-size:25px;
+    padding-left:10px;
+    width:100px;
+}
+#make{
+    width:120px;
+    font-size:20px;
+}
