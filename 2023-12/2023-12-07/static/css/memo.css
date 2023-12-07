@@ -1,0 +1,54 @@
+
+#wrap{
+    width:500px;
+    margin:0 auto;
+    border:1px solid #227788;
+    border-radius: 10px;
+    padding:10px;
+}
+
+.title{
+    text-align: center;
+    font-size:30px;
+}
+.memoInput{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+    border-bottom:2px solid gray;
+    padding-bottom:15px;
+}
+#memo{
+    width:300px; height:25px;
+    padding-left:7px;
+}
+#import{
+    width:80px; height:32px;
+}
+#save{ 
+    background:#227788;
+    color:#fff;
+    font-weight: 800; font-size:20px;
+    border: 0; border-radius: 5px;
+    padding:2px 10px;
+    cursor: pointer;
+ }
+ .memoList{
+    display:flex;  flex-direction: column;
+    row-gap: 10px;
+ }
+ .memoList .memoItem{
+    display:flex; 
+    align-items: center;
+    justify-content: space-between;
+ }
+ .memoItem b{
+    width:50px; text-align: center;
+ }
+ .memoItem h3{
+    margin:0; padding:10px 0;
+    width:350px;
+ }
+ .memoItem div{text-align: center;}
+ .memoItem .del{width:20px; cursor: pointer;}
