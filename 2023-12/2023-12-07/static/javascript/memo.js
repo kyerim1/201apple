@@ -7,12 +7,12 @@ function memo( num, content , importance ){ // 작성된 메모 저장객체
     this.content=content;
     this.importance=importance;
 }
-memo.prototype.create= function(){
+memo.prototype.create= function( i ){
      return `<div class='memoItem'> 
             <b>${this.num}</b>
             <h3>${this.content}</h3>
             <div style='width:70px;background:${this.importance.color}'>${this.importance.text}</div>
-            <div class='del'><i class="bi bi-trash"></i></div>
+            <div class='del' onclick='del_memo(${i})'><i class="bi bi-trash"></i></div>
      </div>`
 }
 
@@ -70,30 +70,63 @@ function save(){ // 등록버튼 클릭하면 동작함수
     //prepend - 태그의 자식으로 앞에 추가 (자식)
     // before - 현재 선택한 태그 앞에 추가 (형제)
 
-    $(".memoList").prepend(  memo_list[last].create()   );
+    $(".memoList").prepend(  memo_list[last].create( num )   );
     num++;  
 
     // 삭제 아이콘 클릭 기능 적용
-    $(".del").on("click", del_memo );
+    // $(".del").on("click", del_memo );
+
+    // var dl = document.getElementsByClassName("del");
+    // for(var i in dl){
+    //     dl[i].addEventListener("click", del_memo);
+    // }
 
     console.log( text+ "  "+ 중요도 );
 
 }
-function del_memo(){
-    var div = $(this); //삭제하고자 클릭한 아이콘의 div 
+let f=true;
+function del_memo( n ){
+
+    
+    for( var i in memo_list){  // memo객체저장된 배열 전체 조회
+        if(n == memo_list[i].num){ // 삭제할 번호 와 일치하는 memo객체찾기
+            memo_list.splice(i, 1);// 배열에서 삭제
+        }
+    }
+
+    $(".memoList").empty(); // 목록 태그 전체 비우기
+    for( var v of memo_list){  //memo_list 배열에 있는 memo객체 다시출력
+        $(".memoList").prepend( v.create( v.num ) );
+    }
+
+
+    // var div = $(this); //삭제하고자 클릭한 아이콘의 div 
+    
+
     // parent() : 바로위의 부모 태그 가져오기
     // parents() : 위에 있는 모든 부모 태그들
-    var parent = div.parent();
-
+    //var parent = div.parent();
     // empty()  : 선택한 태그안에 전부를 비우기
     // remove()  : 선택한 태그안에 전부 를 삭제하고 자기 자신도 삭제 된다.
-    parent.remove();
+    // unwrap() : 선택한 태그의 부모를 삭제
+    //parent.remove();
 }
 
 
 
 
+/*
+    맵 만들어오기!!!
+    어떤맵이냐면!!!
+    가로 7칸,   세로7칸   의 정사각형
 
+    바로바로!!! 
+    대한민국과  일본 도시 이름으로 칸을 채워 오세요
+
+    각면 마다 서로 다른색을 주세요
+
+
+*/
 
 
 
@@ -117,3 +150,7 @@ function del_memo(){
     // .appendChild(태그또는텍스트)  -> .append(태그또는 텍스트)
     // setAttribute("id","aa")  -> .attr("id","aa")
     // getAttribute("id")  -> .attr("id")
+
+
+
+
