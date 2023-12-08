@@ -42,18 +42,37 @@
     //   // 주소 - 웹 주소 또는 로컬파일경로
     // xmlHttp.send();
 
-    var xml = new XMLHttpRequest();
+    // var xml = new XMLHttpRequest();
 
-    xml.onload= function(){
-        var data = JSON.parse(this.responseText) // JSON.parse() - json 문자열값을 객체로변환
-        document.getElementById("view").innerHTML=`
-            <div> 캐릭터명 : ${data.name} </div>
-            <div> 힘 : ${data.힘}  민첩 : ${data.민첩}  생명 : ${data.생명} 지능 : ${data.지능}</div>
-            <div> hp : ${data.hp}  mp : ${data.mp} </div>
-        `;
+    // xml.onload= function(){
+    //     var data = JSON.parse(this.responseText) // JSON.parse() - json 문자열값을 객체로변환
+    //     document.getElementById("view").innerHTML=`
+    //         <div> 캐릭터명 : ${data.name} </div>
+    //         <div> 힘 : ${data.힘}  민첩 : ${data.민첩}  생명 : ${data.생명} 지능 : ${data.지능}</div>
+    //         <div> hp : ${data.hp}  mp : ${data.mp} </div>
+    //     `;
+    // }
+    // xml.open("GET", "./data/game.json");
+    // xml.send();
+
+
+    // var xml = new XMLHttpRequest();
+    // xml.onload=function(){
+    //     var data = JSON.parse(this.responseText);
+    //     document.write( data.name +"  "+data.취미 );
+    // }
+    // xml.open("GET", "http://krdrive.ipdisk.co.kr:8000/test/aaa.php");
+    // xml.send();
+
+    
+    $.getJSON( "./data/game.json"  , function( data ){
+         show(data);
+    } );
+
+    function show(data){
+        $("#view").html(`<h3> ${data.name}</h3>`);
     }
-    xml.open("GET", "./data/game.json");
-    xml.send();
+
 
 </script>
 
