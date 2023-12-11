@@ -1,0 +1,90 @@
+<!--  javascript.html  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<script>
+    //자바스크립트 window 객체  
+    // dom - document object model -> html 구조 ,  표준 문서 에 규격화 되어있다.
+    // bom - browser object model  -> browser를 구성하는 구조, 표준이 없다.
+    // bom - window, screen, location, history, navigator, cookie
+    // css ->  -web-kit,   -ms,  -moz
+
+    // window 객체
+    // - 현재 브라우저의 창 을  나타낸다. 
+    //   window.document.write();
+    //  window.alert();   window.prompt();
+    // window.document.getElementById();
+    //  if( 10> 5){
+    //     alert("aa");
+    //  }
+    //  window.open();   window.close();   window.moveTo(); 
+    //  window.resizeTo();
+    let child_hd=0;  //새창 핸들값 저장 변수
+    function child(){
+        child_hd = window.open("","","width=300,height=500");
+        child_hd.resizeTo(500,700);  // 크기 변경
+    }
+    function sizewin(){
+        child_hd.resizeBy(0,10); // 크기 증가
+    }
+    function move(){
+        child_hd.moveTo(100,300);
+    }
+
+    //스크롤 - scrollTo(),  scrollBy(),  scrollX ,  scrollY
+
+    function nowscrollY(){
+        alert( window.scrollY );
+        window.scrollTo(0,300); // 스크롤 위치 이동 ( x축 , y축)
+        //scrollBy(); 스크롤 증가  ( x축, y축)
+    }
+    window.addEventListener("scroll",function(){
+        if ( window.scrollY >=200 && window.scrollY <=400){
+            document.getElementById("a").innerHTML=
+                "<div style='position:relative;top:300px; height:50px;background:red;'><div>";
+        }else{
+            document.getElementById("a").innerHTML="";
+        }
+    });
+
+    let names=[];// 이름들이 저장 될 공간
+
+    function saveName(){
+        var myname = document.getElementById("name").value;
+        names.push(myname);
+
+        localStorage.setItem("myname", names); //숫자, 문자열, 배열, 객체  저장가능
+        // localStorage에 저장된 key의 value를 제거 하는방법
+        //  removeItem( key )
+        // localStorage의 모든 키를 삭제 - clear() 
+    }
+    function loadName(){
+        var myname = localStorage.getItem("myname");
+        document.getElementById("name").value = myname;
+    }
+
+
+</script>
+
+</head>
+<body>
+    <a href="history.html"> 페이지이동</a>
+    <input type="text" name="name" id="name">
+    <button onclick="saveName()"> 저장</button>
+    <button onclick="loadName()"> 불러오기</button>
+
+    <div id="a" style="height:2000px; background:pink;"></div>
+    <button onclick="nowscrollY()" style="position:fixed;top:50px;left:50px;">
+        스크롤Y축</button>
+
+    <button onclick="child()">새창</button>
+    <button onclick="sizewin()">크기증가</button>
+    <button onclick="move()">이동</button>
+</body>
+</html>
+
+

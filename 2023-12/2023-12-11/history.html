@@ -1,0 +1,44 @@
+<!-- history.html  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+    // window 하위(자식)객체 중 history 객체
+    // 브라우저에서 사용자의 기록을 담당 하는 객체() - 방문페이지
+    // window.history  ,  history
+    //  history.back() - 이전에 방문한 페이지로 이동
+    //  history.back(-2) - 이전에 방문한 페이지중 최근 페이지에서 두번째 페이지
+    // history.go()  - 방문한 페이지중 원하는 페이지로 이동
+    // history.go(1)  - 앞으로 한번 페이지 이동
+    // history.go(-2) - 이전으로 두번 페이지 이동
+    // history.forward() - 앞으로 이동
+    //  go(), back(),  forward() -  페이지 방문 기록이 있는 경우에만 동작 한다.
+
+    function test1(){
+        history.back();
+    }
+    function test2(){
+        history.back(-1);
+    }
+    function test3(){
+        history.go(-1);
+    }
+    function test4(){
+        alert( history.length);
+    }
+
+</script>
+
+</head>
+<body>
+
+    <button onclick="test1()">back</button>
+    <button onclick="test2()">back -1</button>
+    <button onclick="test3()">go -1</button>
+    <button onclick="test4()">방문페이지수</button>
+    
+</body>
+</html>

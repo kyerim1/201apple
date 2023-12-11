@@ -1,0 +1,85 @@
+<!-- location.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<script>
+// window객체 하위(자식)객체중 url(주소)를 담당하는 location 객체
+// 주소 - https://www.naver.com
+//  프로토콜:// 도메인 : 포트번호
+// assign("주소") - 새로운 페이지 로드( 새페이지), 페이지 이동
+// href="주소"    - 새로운 페이지 이동
+// replace("주소") - 새로운 페이지 교체
+
+// hash - (#) 앵커 부분을 설정하거나 반환 - 페이지 내에서 이동
+
+// host -  도메인주소와 포트 https://www.naver.com ->  www.naver.com:80 
+// hostname - 도메인주소 https://www.naver.com   ->   www.naver.com 
+// protocol -  현재주소의 프로토콜   https://www.naver.com  ->  https: 
+// port - 현재주소의 포트   https://www.naver.com ->  80 
+// pathname - 주소의 경로  https://comic.naver.com/index   ->  /index
+// origin - 현재 주소의 프로토콜, 도메인, 포트 
+//           https://comic.naver.com/index  ->  https://comic.naver.com
+
+// reload() -  현재문서를 다시로드
+// search -  현재 주소의 쿼리  
+//              http://www.a.com/?id=123&name=red   ->   ?id=123&name=red
+//          함수의 매개변수와 비슷한 역할 -> 쿼리 문자열
+
+function test1(){
+    location.assign("history.html"); // document 부분 로드, 느리지만 href비해 안전
+}
+function test2(){
+    location.href="history.html" // 새로운 객체로 로드, 빠르다.
+}
+function test3(){
+    location.replace("history.html"); // histroy객체의 내용을 교체하며 새페이지열기
+}
+
+window.addEventListener("hashchange", hasHandler);
+function hasHandler(){
+    
+}
+function aa(hash){
+    location.hash=hash;
+    console.log(location.hash);
+    location.href= location.href;
+}
+</script>
+
+<style>
+    #menu{
+        position:fixed;
+        top:100px; right:50px;
+    }
+    #sport, #music, #movie, #shopping{
+        height:1500px;
+    }
+</style>
+
+</head>
+<body>
+
+    <div id="menu">
+        <a href="#sport">스포츠</a>
+        <a href="#movie">영화</a>
+        <a href="javascript:aa(music);">음악</a>
+        <a href="#shopping">쇼핑</a>
+    </div>
+
+    <div id="sport" >스포츠</div>
+    <div id="movie">영화</div>
+    <div id="music">음악</div>
+    <div id="shopping">쇼핑</div>
+
+    
+    <button onclick="test1()"> assign </button>
+    <button onclick="test2()"> href </button>
+    <button onclick="test3()"> replace </button>
+
+
+</body>
+</html>

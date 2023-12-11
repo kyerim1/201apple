@@ -1,0 +1,38 @@
+<!-- booklist.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        window.onload=function(){
+            var query = location.search;
+            var url = location.href;
+            
+            query = query.substring(1);
+//    title=html과+javascript&writer=홍길동
+            query = query.split("&");
+//  0 인덱스 - title=html과+javascript ,  1 인덱스 - writer=홍길동
+            var title = query[0].split("=")[1];
+            var writer = query[1].split("=")[1];
+
+            title = decodeURI(title);
+            writer = decodeURI(writer);
+
+            document.getElementById("list").innerHTML=
+            `<div>제목 : ${title}</div><div>저자 : ${writer}</div>`;
+
+            console.log(title);
+            console.log(query);
+            console.log(url);
+        }
+    </script>
+</head>
+<body>
+    
+    <div id="list"></div>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!-- navigator.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        //  navigator - 브라우저의 정보를 담고 있다.
+        // userAgent - 브라우저 이름, 버전, 플랫폼 , 운영체제 
+
+        // var agent = navigator.userAgent;
+        // // alert( agent );
+
+        // if( agent.toLowerCase().includes("windows") ){
+        //     alert("윈도우 pc로 접속 하였습니다.");
+        //     // 윈도우용 페이지 이동 
+        // }else if(agent.toLowerCase().includes("android") ){
+        //     alert("안드로이드 모바일 접속");
+        //     // 모바일용 페이지 이동
+        // }else if(agent.toLowerCase().includes("ipad")){
+        //     alert("ipad로 접속 ");
+        // }else if(agent.toLowerCase().includes("iphone")){
+        //     alert("아이폰 접속");
+        // }
+
+        // //접속 위치 정보
+        // navigator.geolocation.getCurrentPosition( show );
+
+        // // 지속적으로 사용자위치를 요청 - watchPosition();
+
+        // function show(position){
+        //     alert( position.coords.latitude +"  " + position.coords.longitude  )
+        // }
+
+        // function getmap(){
+
+        //     var image = document.createElement("img");
+        //     navigator.geolocation.getCurrentPosition(setMap);
+        //     return image;
+
+        //     function setMap(pos){
+        //         var latitude = pos.coords.latitude;
+        //         var longitude = pos.coords.longitude;
+
+        //         var accuracy = pos.coords.accuracy; // 미터 단위의 정확도 
+
+        //         // 구글지도에 대한 정적 이미지 
+        //         var url = "https://maps.googleapis.com/maps/api/staticmap"+
+        //                 "?center="+latitude+","+longitude+
+        //                 "&size=640x640&sensor=true";
+
+        //         image.src=url;
+        //     }
+        // }
+        // getmap();
+
+
+    </script>
+
+
+
+</head>
+<body>
+   
+    <div id="map" style="width:500px;height:400px;"></div>
+
+</body>
+</html>
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=072cac1c40121b8beb997b421bc39579"></script>
+
+<script>
+
+let latitude=0 , longitude=0;
+
+navigator.geolocation.getCurrentPosition( function(pos){
+    latitude = pos.coords.latitude; //위도
+    longitude = pos.coords.longitude; //경도
+});
+
+
+var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+var options = { //지도를 생성할 때 필요한 기본 옵션
+	center: new kakao.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
+	level: 3 //지도의 레벨(확대, 축소 정도)
+};
+
+var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+
+</script>
