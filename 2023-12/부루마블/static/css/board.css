@@ -7,8 +7,8 @@
 
 #wrap{
     width:1200px;
-    margin:0 auto;
-    position:relative;
+    position:absolute;
+    right:20px;
 }
 
 #board{
@@ -20,7 +20,8 @@
 }
 
 .zone{
-    border:1px solid black;
+    border:1px solid white;
+    background:rgb(98 164 255);
 }
 .top{ height:200px;}
 
@@ -56,7 +57,7 @@
 }
 .right{display:flex;}
 .right .zone_color{width:50px;}
-.right .zone_name{border-left:1px solid black;}
+.right .zone_name{ width:calc(100% - 50px);  border-left:1px solid black;}
 
 .bottom .zone_color{height:50px;}
 .bottom .zone_name{height:calc(100% - 50px);
@@ -66,4 +67,56 @@ border-top:1px solid black;}
 .center{
     background: url("../images/중앙.jpg") no-repeat center;
     background-size:cover;
+}
+
+.zone .zone_name{
+    font-size:35px;
+    font-weight:700;
+    font-family: "휴먼매직체";
+    color:#fff;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* 게임 플레이어 설정및 현황판 */
+#game_player{
+    position:fixed;
+    top:100px;
+    left:20px;
+    background:rgba(230,230,230,0.7);
+    z-index:1000;
+    border-radius: 10px;
+    padding:15px;
+}
+
+#set_player{
+    width:200px;
+}
+.pn{ padding:5px; width:100%;}
+.pn input[type=range]{
+    width:150px;
+    -webkit-appearance: none;
+    background:green;
+    border-radius: 10px;
+}
+.pn input[type=range]::-webkit-slider-thumb{
+/* 슬라이더 모양 변경 - 슬라이더 값설정 스위치  */
+    -webkit-appearance: none;
+    height:25px;
+    border:2px solid #223355;
+    width:20px;
+    border-radius: 20px;
+    background:orange;
+}
+.pn input[type=range]::-webkit-slider-runnable-track{
+    background:blue;
+    border-radius: 20px;
+}
+
+#enroll{
+    float:right;
+    font-size:20px;
+    padding:3px 10px;
 }
