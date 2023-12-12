@@ -1,0 +1,69 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+
+#wrap{
+    width:1200px;
+    margin:0 auto;
+    position:relative;
+}
+
+#board{
+    width:100%;
+    padding:50px 0;
+    display:grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-auto-rows: auto;
+}
+
+.zone{
+    border:1px solid black;
+}
+.top{ height:200px;}
+
+.left, .right{width:200px; height:100px;}
+
+.bottom{ height:200px;}
+
+.zone:nth-child(1), .zone:nth-child(9),
+.zone:nth-child(32), .zone:nth-child(24){
+    width:200px; height:200px;
+}
+.center{
+    grid-row: 2/9;
+    grid-column:2/9 ;
+}
+.top{
+    display:flex;
+    flex-direction: column;
+}
+.top .zone_color{ 
+    order:2; height:50px;
+}
+.top .zone_name{
+    order:1;
+    height:calc(100% - 50px);
+    border-bottom:1px solid black;
+}
+.left{ display:flex; }
+.left .zone_color{  order:2; width:50px; }
+.left .zone_name{
+    order:1; width:calc(100% - 50px);
+    border-right:1px solid black;
+}
+.right{display:flex;}
+.right .zone_color{width:50px;}
+.right .zone_name{border-left:1px solid black;}
+
+.bottom .zone_color{height:50px;}
+.bottom .zone_name{height:calc(100% - 50px);
+border-top:1px solid black;}
+
+
+.center{
+    background: url("../images/중앙.jpg") no-repeat center;
+    background-size:cover;
+}
