@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- jquery-->
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+<style> 
+    #toy{
+        background-color: red;
+        width:200px;
+        list-style:none;
+    }
+</style>
+</head>
+<body>
+    
+    <div id="box">
+        <ul id="toy">
+            <li class="favorite">1</li>
+            <li class="favorite">2</li>
+            <li class="favorite"> <p></p> </li>
+            <li class="favorite"> <b></b> </li>
+            <li class="favorite">5</li>
+            <li class="favorite">6</li>
+        </ul>
+    </div>
+
+</body>
+</html>
+<script>
+    var toy = document.getElementById("toy");
+    toy.style.listStyle="none";
+    $("#toy").css("list-style","none");
+    
+    var fv = document.getElementsByClassName("favorite"); // $(".favorite")
+    // b태그안에 만  "집에가자"  라고 넣기
+    var len = fv.length;
+    for( var i=0; i<len; i++){
+        if( fv[i].children.length !=0  ){
+            if( fv[i].children[0].localName =="b" ){
+                fv[i].children[0].innerHTML="집에가자";
+            }
+        }
+    }
+
+    console.log(fv);
+
+   
+</script>

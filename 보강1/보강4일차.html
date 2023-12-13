@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<!-- jquery-->
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <script>
+        // 오늘의 수업 - ( 태그와  객체 ) with 반복문
+        // 자바스크립트에서 html 태그를 선택하는방법
+        // html태그를 선택?? -> document객체로부터 html태그를 찾아서 가져오는것
+
+
+    </script>
+
+</head>
+<body>
+    <div id="a">1 <p>나는p요</p></div>
+    <div class="b">2</div>
+    <div id="aaa">3 <h1>나는h1  <b>나는b</b>  </h1> </div>
+    <div class="b f">4
+        <h3>넓고넓은</h3>  
+        <h4>바다의 어디어디  <p>어딘가에</p> </h4>
+        <b>세상에서 가장 예쁘게 노래하는</b>
+    </div>
+</body>
+</html>
+<script>
+// 네번째 div 안에 있는 텍스트중에서  p태그안의 텍스트를 "커다란 고래가" 로 변경
+
+    var tag = document.getElementsByTagName("body");
+tag[0].children[3].children[1].children[0].innerHTML="커다란 고래가";
+    
+var loc1="h4";
+var poc="p";
+
+$("body").children(".b").children(loc1).children(poc).html("커다란 고래가");
+
+// body변수를 이용해서 b태그의 텍스트를 "신나는 보강" 이라고 변경
+    
+ //   body[0].children[2].children[0].lastElementChild.innerHTML="신나는 보강";
+
+    // body[0].children[0].firstElementChild.innerHTML="변경 되나?";
+    //$("#a"); $(".b");
+    console.log(tag);
+</script>
