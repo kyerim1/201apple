@@ -83,7 +83,11 @@ function game_todo( location ){
     var city = zone[location];
     var gamer = player_list[turn-1]; 
 
-    if( city.owner == ''){ // 도시의 주인이 없는경우
+    if(city.purchase == 0){ // 매입금이 0인곳은 무인도,기금,출발,공항,납부
+        // 16-복지기금, 24-공항, 28-기금납부, 8-무인도, 0-출발지
+        city.func(gamer);
+
+    }else if( city.owner == ''){ // 도시의 주인이 없는경우
         if( confirm(`${city.name}의 매입가는 
             ${city.purchase}만원 입니다. \n매입 하시겠습니까?`) ){
                 city.owner=turn; //토지소유자 변경
@@ -96,6 +100,13 @@ function game_todo( location ){
         }
     }else{  // 도시의 주인이 있는경우
         // 도시의 주인에게 토지매입금만큼 통행료 지불
-        var owner = 
+        var owner = city.owner; // 도시 주인 번호
+        var tollfee = city.purchase; // 통행료
+        gamer.money -= tollfee;
+        player_list[owner-1].money += tollfee;
+
+        $("#pm"+owner).text(player_list[owner-1].money+"만원");
+        $("#pm"+turn).text(gamer.money+"만원");
+        alert(`${city.name} 소유주에게 ${tollfee}만원 지불했습니다.`);
     }
 }
