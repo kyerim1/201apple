@@ -39,8 +39,10 @@ function game_init(){
 
     $("#game_state").html("<h3>게임현황</h3>");
 
+    var pcolor=["#ff0000","#00ff00","#FFB2F5","#FFBB00","#0054FF"];
+
     for(var i=1; i<=pc; i++){
-        player_list.push( new player( i, "#ff0000" ) );
+        player_list.push( new player( i, pcolor[i-1] ) );
         $("#game_state").append(
             `<div class='ps'>
                 <b class='pnum'>${i}</b>
@@ -78,7 +80,22 @@ function game_init(){
 }
 
 function create_dice(){ // 화면에 주사위 나타내기
-    var dice =``;
+    var dice =`
+    <div id='dice_wrap'>
+        <div class='dice'>
+            <div class='diceImg'>
+                <img id='dice1' src='./static/images/dice1.png'>
+            </div>
+            <div class='diceImg'>
+                <img id='dice2' src='./static/images/dice4.png'>
+            </div>
+        </div>
+        <div class='dicebt'>
+            <button onclick='rolling(this)'>굴리기</button>
+        </div>
+    </div>
+    `;
+    $(".center").append(dice);
 }
 
 
