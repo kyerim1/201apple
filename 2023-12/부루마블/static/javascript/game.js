@@ -10,6 +10,10 @@ let dice1=[0,0], dice2=[0,0]; // 주사위 setInterval 값 저장 변수
 //함수 정의
 function rolling(obj){ // 주사위 생성된후 버튼을클릭하면 주사위가 
     //  이미지가 변경되는 함수,  obj는 버튼 태그객체를 전달받는 변수
+    if(탑승객 !=0){
+        alert("공항 이용 먼저 해주세요");
+        return;
+    }
     $(obj).text("멈춰!");
     $(obj).attr("onclick","stop(this)");
     
@@ -62,6 +66,36 @@ function meeple_move(){ // 주사위 값에 따라 말을 움직이기
     // 다음 플레이어 턴 넘기기
     turn = 다음턴(turn);
     
+    // 최종 승자
+    var win=0 ,c=0, t=0, b=[0,0];
+    for(var i=0; i<player_list.length; i++){
+        t+=player_list[i].zone;
+        if( b[0] < player_list[i].zone ){
+            b[0] = player_list[i].zone;
+            b[1] = player_list[i];
+        }
+        if( !player_list[i].파산 ){ 
+            c++;
+            win=player_list[i];
+        }
+    }
+
+    if(c==1){
+        $("#md").show();
+        $("#mdd").html(
+        `<h2>승자는 ${win.num}플레이어</h2>  <h3>총자금:${win.money}</h3>
+        <h3> 보유도시:${win.zone}</h3>`
+        );
+    }else if(t==28){
+        $("#md").show();
+        $("#mdd").html(
+        `<h2>승자는 ${b[1].num}플레이어</h2>  <h3>총자금:${b[1].money}</h3>
+        <h3> 보유도시:${b[1].zone}</h3>`
+        );
+    }
+    
+
+
 
     $(".pcity").css("background","");
     $("#pcity"+turn).css("background","white");
