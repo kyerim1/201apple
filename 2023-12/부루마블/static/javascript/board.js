@@ -204,12 +204,21 @@ function airport(gamer){// 플레이어가 원하는곳으로 이동(마우스�
 
 function fundpayment(gamer){//플레이어의 돈을 복지기금으로 지불(20만원)
     alert("복지기금으로 20만원 지불했습니다.");
-    gamer.money -= 20;
-    fund += 20;
+    if(gamer.money<20){
+        fund+= gamer.money;
+        gamer.money=0;
+        gamer.파산=true;
+        파산처리(gamer);
+    }else{
+        gamer.money -= 20;
+        fund += 20;
+    }
     $("#pm"+gamer.num).text( gamer.money+"만원");
+    
 }
 function island(gamer){// 3턴동안 탈출 불가
-
+    gamer.drift_turn=3;
+    island_.push(gamer.num);
 }
 function complete(gamer){ // 출발지를 도착하거나 통과하면 20만원 보너스
         gamer.money += 20;

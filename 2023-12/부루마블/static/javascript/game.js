@@ -70,6 +70,14 @@ function meeple_move(){ // 주사위 값에 따라 말을 움직이기
 function 다음턴( who ){
     if(who==player_list.length)
         who=0;
+    
+    if( island_.includes( who+1 )  ){
+        player_list[who].drift_turn--;
+        if( player_list[who].drift_turn == 0 ){ //무인도 남은턴이 0 이면 island배열에서 제거
+            island_.splice( island_.indexOf(who+1),1 );
+        }
+        return 다음턴(who+1);
+    }
 
     if( player_list[ who ].파산 )
         return 다음턴(who+1);
@@ -146,13 +154,20 @@ function game_todo( location , gamer ){
 
 
 function 파산처리(gamer){ // 자금부족으로 파산된 플레이어 처리
-    //소유한 토지 전부 owner 초기화
 
-
-    //소유한 토지 배경색 제거
-
+    //소유한 토지 전부 owner 초기화 ,소유한 토지 배경색 제거
+    $.each(zone, function(idx, city){
+        if( city.owner == gamer.num ){
+            city.owner=''; // 소유주 초기화
+            var zl = find_location( city.num );
+            $(".zone").eq(zl).children(".zone_name").css("background","");//배경색 제거
+        }
+    });
 
     // 말 제거
+    var zl = find_location( gamer.location );
+    $(".zone").eq(zl).children(".m"+gamer.num).remove();
+
 }
 
 function airport_move(){
